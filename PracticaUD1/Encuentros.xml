@@ -1,0 +1,137 @@
+<Encuentros>
+  <encuentros>
+    <encuentro>
+      <numeroPJ>2</numeroPJ>
+      <nivelPJ>5</nivelPJ>
+      <enemigos>
+        <enemigos>
+          <enemigo>
+            <id>166</id>
+            <nombre>Clockwork Hound                                   </nombre>
+            <tipo>Construct  </tipo>
+            <cr>2</cr>
+            <xp>450</xp>
+          </enemigo>
+          <enemigo>
+            <id>863</id>
+            <nombre>Vegepygmy                                         </nombre>
+            <tipo>Plant      </tipo>
+            <cr>0</cr>
+            <xp>50</xp>
+          </enemigo>
+          <enemigo>
+            <id>702</id>
+            <nombre>Rhinoceros                                        </nombre>
+            <tipo>Beast      </tipo>
+            <cr>2</cr>
+            <xp>450</xp>
+          </enemigo>
+          <enemigo>
+            <id>797</id>
+            <nombre>Stryx                                             </nombre>
+            <tipo>Monstrosity</tipo>
+            <cr>0</cr>
+            <xp>25</xp>
+          </enemigo>
+          <enemigo>
+            <id>650</id>
+            <nombre>Owlbear                                           </nombre>
+            <tipo>Beast      </tipo>
+            <cr>0</cr>
+            <xp>10</xp>
+          </enemigo>
+          <enemigo>
+            <id>420</id>
+            <nombre>Goat                                              </nombre>
+            <tipo>Beast      </tipo>
+            <cr>0</cr>
+            <xp>10</xp>
+          </enemigo>
+          <enemigo>
+            <id>341</id>
+            <nombre>Frog                                              </nombre>
+            <tipo>Beast      </tipo>
+            <cr>0</cr>
+            <xp>0</xp>
+          </enemigo>
+          <enemigo>
+            <id>740</id>
+            <nombre>Sea Horse                                         </nombre>
+            <tipo>Beast      </tipo>
+            <cr>0</cr>
+            <xp>0</xp>
+          </enemigo>
+          <enemigo reference="../enemigo[8]"/>
+        </enemigos>
+      </enemigos>
+      <recompensas>
+        <recompensas>
+          <recompensa>
+            <id>10</id>
+            <nombre>Spell scroll (1st level)                          </nombre>
+            <tipo>scroll         </tipo>
+            <rareza>1</rareza>
+          </recompensa>
+          <recompensa>
+            <id>9</id>
+            <nombre>Potion of healing                                 </nombre>
+            <tipo>potion         </tipo>
+            <rareza>1</rareza>
+          </recompensa>
+        </recompensas>
+      </recompensas>
+    </encuentro>
+    <encuentro>
+      <numeroPJ>5</numeroPJ>
+      <nivelPJ>6</nivelPJ>
+      <enemigos>
+        <enemigos>
+          <enemigo>
+            <id>927</id>
+            <nombre>Yeti                                              </nombre>
+            <tipo>Monstrosity</tipo>
+            <cr>3</cr>
+            <xp>700</xp>
+          </enemigo>
+          <enemigo>
+            <id>154</id>
+            <nombre>Chimera                                           </nombre>
+            <tipo>Monstrosity</tipo>
+            <cr>6</cr>
+            <xp>2300</xp>
+          </enemigo>
+          <enemigo>
+            <id>740</id>
+            <nombre>Sea Horse                                         </nombre>
+            <tipo>Beast      </tipo>
+            <cr>0</cr>
+            <xp>0</xp>
+          </enemigo>
+          <enemigo>
+            <id>341</id>
+            <nombre>Frog                                              </nombre>
+            <tipo>Beast      </tipo>
+            <cr>0</cr>
+            <xp>0</xp>
+          </enemigo>
+        </enemigos>
+      </enemigos>
+      <recompensas>
+        <recompensas>
+          <recompensa>
+            <id>216</id>
+            <nombre>Gloves of swimming and climbing                   </nombre>
+            <tipo>wondrous item  </tipo>
+            <rareza>2</rareza>
+          </recompensa>
+          <recompensa>
+            <id>238</id>
+            <nombre>Potion of greater healing                         </nombre>
+            <tipo>potion         </tipo>
+            <rareza>2</rareza>
+          </recompensa>
+        </recompensas>
+      </recompensas>
+    </encuentro>
+  </encuentros>
+</Encuentros>

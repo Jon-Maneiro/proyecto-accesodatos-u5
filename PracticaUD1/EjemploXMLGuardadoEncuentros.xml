@@ -1,0 +1,23 @@
+<Listado>
+	<Encuento>
+		<NumeroPJ> </NumeroPJ>
+		<NivelPJ> </NivelPJ>
+		<Enemigos>
+			<Enemigo>
+				<Nombre></Nombre>
+				<CR></CR>
+				<Cantidad></Cantidad>
+			</Enemigo>
+			<Enemigo>
+				<Nombre></Nombre>
+				<CR></CR>
+				<Cantidad></Cantidad>
+			</Enemigo>
+		</Enemigos>
+		<Recompensas>
+			<Recompensa>
+				<Nombre></Nombre>
+			</Recompensa>
+			<Oro> </Oro>
+		</Recompensas>
+	</Encuentro>

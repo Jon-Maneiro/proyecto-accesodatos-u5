@@ -1,0 +1,56 @@
+BASICO----------
+
+Calculadora de encuentros de DND
+Lista de enemigos, con sus estadisticas y CR
+Lista de "recompensas" posibles en caso de ser combates importantes
+
+Lista de Personajes un poco merequetengue
+
+Guardado de los encuentros generados en XML
+
+Input de Personajes con su nivel para calcular 
+
+XDDDDDD----------------------------------
+
+Posibilidad de meter los datos a mano para generar encuentros a medida.
+
+Simulación del resultado del combate. Un balance con la dificultad
+del encuentro junto al nivel de los jugadores.
+
+
+Organización--------------------
+
+Enemigos.dat
+	Nombre(String 50) Tipo(String 11) CR(long(Los valores menores a 1
+tendrán que ir como 0.algo)) XP(int)
+
+Recompensas.dat
+	Nombre(String 50) Tipo(String 15) Rareza(int)
+	Rarezas:
+	1-common
+	2-uncommon
+	3-rare
+	4-very rare
+	5-Legendary
+	6-Artifact
+
+
+
+
+
+XML guardado datos-
+Listado>Encuentro><NumeroPJ><NivelPj><>Enemigos>Cantidad><<Recompensa>
+
+
+
+
+
+
+
+
+X + ((Y/2+1) + CPorNivel(Se aplica Retroactivamente))
+
+
+
+
+
