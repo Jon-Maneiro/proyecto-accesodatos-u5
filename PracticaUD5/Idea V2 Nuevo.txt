@@ -1,0 +1,28 @@
+IMPORTANTE DECIRLE EN QUE LINEAS ESTAN LOS PARAMETROS DE ACCESO PARA QUE PUEDA PROBARLO
+
+IMPORTANTE, SUBIR TODOS LOS DOCUMENTOS A LA COLECCION DE EXIST, INDICAR QUE LOS FICHEROS ORIGINALES HAN DE SER RESUBIDOS PARA APLICAR CAMBIOS EN BBDD
+
+XML-
+
+	generar 2 xml diferentes, utilizando los 2 ya existentes, y creando consultas exclusivas para cada uno:
+	
+	Grupos.xml - Importa de "Personajes.xml"(Cambiar el codigo para generarlo como XML en lugar de como .dat)
+			La idea de este xml es crearlo a partir de coger personajes uno a uno y juntarlos en un grupo o
+			permitir coger una cantidad x de personajes que cumplan un criterio(p.e misma clase, mismo nivel, mismo nombre)
+			También permitir insertar comentarios y etiquetas
+
+	Combates.xml - Importa un encuentro de "Encuentros.xml" y personajes de "Grupos.xml"
+			Este xml agrupa los datos de un encuentro, junto al grupo.
+			Además se pueden meter más cosas interesnates, como si elgrupo ha perdido o ganado, si uno de los personajes ha muerto,
+			Y igual más opciones, como permitir insertar comentarios.
+
+
+Cada uno de los xml permitirá hacer select individual de las cosas, y pensar en consultas más complejas.
+Se me ocurre poder hacer búsqueda por comentarios y/o etiquetas.
+
+TAMBIÉN se podrán hacer updates y deletes de los datos, pensar bien las updates porque son complejas. En Grupo, poder cambiar el nombre del grupo, algun dato de los personajes..
+Poder borrar el grupo completo, un personaje suelto, añadirle un personaje suelto.
+
+EN encuentros, poder quitar monstruos individuales, añadirlos, quitar personajes del grupo, añadirlos, y editar las recompensas. Parece mucho, espero que no lo sea.
+
+Si por algún casual lees esto profe, este es mi metodo de pensar las cosas, un txt y voy tirando.
