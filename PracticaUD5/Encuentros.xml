@@ -1,6 +1,1761 @@
 <Encuentros>
   <encuentros>
     <encuentro>
+      <numeroPJ>100</numeroPJ>
+      <nivelPJ>20</nivelPJ>
+      <enemigos>
+        <enemigos>
+          <enemigo>
+            <id>539</id>
+            <nombre>Lion                                              </nombre>
+            <tipo>Beast      </tipo>
+            <cr>1</cr>
+            <xp>200</xp>
+          </enemigo>
+          <enemigo>
+            <id>189</id>
+            <nombre>Cultist                                           </nombre>
+            <tipo>Humanoid   </tipo>
+            <cr>0</cr>
+            <xp>25</xp>
+          </enemigo>
+          <enemigo>
+            <id>500</id>
+            <nombre>J&apos;Ba Fofi Spider                                  </nombre>
+            <tipo>Beast      </tipo>
+            <cr>3</cr>
+            <xp>700</xp>
+          </enemigo>
+          <enemigo>
+            <id>377</id>
+            <nombre>Giant Eagle                                       </nombre>
+            <tipo>Beast      </tipo>
+            <cr>2</cr>
+            <xp>200</xp>
+          </enemigo>
+          <enemigo>
+            <id>807</id>
+            <nombre>Swarm of Poisonous Snakes                         </nombre>
+            <tipo>Beast      </tipo>
+            <cr>2</cr>
+            <xp>450</xp>
+          </enemigo>
+          <enemigo>
+            <id>875</id>
+            <nombre>Void Dragon (Adult)                               </nombre>
+            <tipo>Dragon     </tipo>
+            <cr>14</cr>
+            <xp>11500</xp>
+          </enemigo>
+          <enemigo>
+            <id>71</id>
+            <nombre>Babau                                             </nombre>
+            <tipo>Fiend      </tipo>
+            <cr>4</cr>
+            <xp>1100</xp>
+          </enemigo>
+          <enemigo>
+            <id>612</id>
+            <nombre>Needle Blight                                     </nombre>
+            <tipo>Plant      </tipo>
+            <cr>0</cr>
+            <xp>50</xp>
+          </enemigo>
+          <enemigo>
+            <id>606</id>
+            <nombre>Myconid Sprout                                    </nombre>
+            <tipo>Plant      </tipo>
+            <cr>0</cr>
+            <xp>10</xp>
+          </enemigo>
+          <enemigo>
+            <id>521</id>
+            <nombre>Krake Spawn                                       </nombre>
+            <tipo>Monstrosity</tipo>
+            <cr>9</cr>
+            <xp>5000</xp>
+          </enemigo>
+          <enemigo>
+            <id>40</id>
+            <nombre>Ancient Titan                                     </nombre>
+            <tipo>Celestial  </tipo>
+            <cr>12</cr>
+            <xp>8400</xp>
+          </enemigo>
+          <enemigo>
+            <id>253</id>
+            <nombre>Drake, Coral                                      </nombre>
+            <tipo>Dragon     </tipo>
+            <cr>7</cr>
+            <xp>2900</xp>
+          </enemigo>
+          <enemigo>
+            <id>742</id>
+            <nombre>Selang                                            </nombre>
+            <tipo>Fey        </tipo>
+            <cr>4</cr>
+            <xp>1100</xp>
+          </enemigo>
+          <enemigo>
+            <id>760</id>
+            <nombre>Skeleton                                          </nombre>
+            <tipo>Undead     </tipo>
+            <cr>0</cr>
+            <xp>50</xp>
+          </enemigo>
+          <enemigo>
+            <id>777</id>
+            <nombre>Spectral Guardian                                 </nombre>
+            <tipo>Undead     </tipo>
+            <cr>6</cr>
+            <xp>2300</xp>
+          </enemigo>
+          <enemigo>
+            <id>836</id>
+            <nombre>Treacle                                           </nombre>
+            <tipo>Ooze       </tipo>
+            <cr>0</cr>
+            <xp>50</xp>
+          </enemigo>
+          <enemigo>
+            <id>666</id>
+            <nombre>Posessed Pillar                                   </nombre>
+            <tipo>Construct  </tipo>
+            <cr>7</cr>
+            <xp>2900</xp>
+          </enemigo>
+          <enemigo>
+            <id>461</id>
+            <nombre>Half-Red Dragon Veteran                           </nombre>
+            <tipo>Humanoid   </tipo>
+            <cr>5</cr>
+            <xp>1800</xp>
+          </enemigo>
+          <enemigo>
+            <id>273</id>
+            <nombre>Dullahan                                          </nombre>
+            <tipo>Fey        </tipo>
+            <cr>11</cr>
+            <xp>7200</xp>
+          </enemigo>
+          <enemigo>
+            <id>636</id>
+            <nombre>Ogre Zombie                                       </nombre>
+            <tipo>Undead     </tipo>
+            <cr>2</cr>
+            <xp>450</xp>
+          </enemigo>
+          <enemigo>
+            <id>371</id>
+            <nombre>Giant Bat                                         </nombre>
+            <tipo>Beast      </tipo>
+            <cr>0</cr>
+            <xp>50</xp>
+          </enemigo>
+          <enemigo>
+            <id>460</id>
+            <nombre>Half-Ogre                                         </nombre>
+            <tipo>Giant      </tipo>
+            <cr>1</cr>
+            <xp>200</xp>
+          </enemigo>
+          <enemigo>
+            <id>817</id>
+            <nombre>Tanarukk                                          </nombre>
+            <tipo>Fiend      </tipo>
+            <cr>5</cr>
+            <xp>1800</xp>
+          </enemigo>
+          <enemigo>
+            <id>786</id>
+            <nombre>Sprite                                            </nombre>
+            <tipo>Fey        </tipo>
+            <cr>0</cr>
+            <xp>50</xp>
+          </enemigo>
+          <enemigo>
+            <id>369</id>
+            <nombre>Giant Ape                                         </nombre>
+            <tipo>Beast      </tipo>
+            <cr>7</cr>
+            <xp>2900</xp>
+          </enemigo>
+          <enemigo>
+            <id>383</id>
+            <nombre>Giant Lizard                                      </nombre>
+            <tipo>Beast      </tipo>
+            <cr>0</cr>
+            <xp>50</xp>
+          </enemigo>
+          <enemigo>
+            <id>57</id>
+            <nombre>Arcanaloth                                        </nombre>
+            <tipo>Fiend      </tipo>
+            <cr>12</cr>
+            <xp>8400</xp>
+          </enemigo>
+          <enemigo>
+            <id>180</id>
+            <nombre>Corpse Mound                                      </nombre>
+            <tipo>Undead     </tipo>
+            <cr>11</cr>
+            <xp>7200</xp>
+          </enemigo>
+          <enemigo>
+            <id>328</id>
+            <nombre>Flame Dragon (Ancient)                            </nombre>
+            <tipo>Dragon     </tipo>
+            <cr>24</cr>
+            <xp>62000</xp>
+          </enemigo>
+          <enemigo>
+            <id>315</id>
+            <nombre>Fext                                              </nombre>
+            <tipo>Undead     </tipo>
+            <cr>6</cr>
+            <xp>2300</xp>
+          </enemigo>
+          <enemigo>
+            <id>34</id>
+            <nombre>Ancient Bronze Dragon                             </nombre>
+            <tipo>Dragon     </tipo>
+            <cr>22</cr>
+            <xp>41000</xp>
+          </enemigo>
+          <enemigo>
+            <id>526</id>
+            <nombre>Kuo-toa Whip                                      </nombre>
+            <tipo>Humanoid   </tipo>
+            <cr>1</cr>
+            <xp>200</xp>
+          </enemigo>
+          <enemigo>
+            <id>890</id>
+            <nombre>Warlock of the Fiend                              </nombre>
+            <tipo>Humanoid   </tipo>
+            <cr>7</cr>
+            <xp>2900</xp>
+          </enemigo>
+          <enemigo>
+            <id>462</id>
+            <nombre>Harpy                                             </nombre>
+            <tipo>Monstrosity</tipo>
+            <cr>1</cr>
+            <xp>200</xp>
+          </enemigo>
+          <enemigo>
+            <id>264</id>
+            <nombre>Drow                                              </nombre>
+            <tipo>Humanoid   </tipo>
+            <cr>0</cr>
+            <xp>50</xp>
+          </enemigo>
+          <enemigo>
+            <id>318</id>
+            <nombre>Fire Giant                                        </nombre>
+            <tipo>Giant      </tipo>
+            <cr>9</cr>
+            <xp>5000</xp>
+          </enemigo>
+          <enemigo>
+            <id>656</id>
+            <nombre>Phase Spider                                      </nombre>
+            <tipo>Monstrosity</tipo>
+            <cr>3</cr>
+            <xp>700</xp>
+          </enemigo>
+          <enemigo>
+            <id>45</id>
+            <nombre>Angel, Chained                                    </nombre>
+            <tipo>Celestial  </tipo>
+            <cr>8</cr>
+            <xp>3900</xp>
+          </enemigo>
+          <enemigo>
+            <id>814</id>
+            <nombre>Swarm, Sluagh                                     </nombre>
+            <tipo>Fey        </tipo>
+            <cr>3</cr>
+            <xp>700</xp>
+          </enemigo>
+          <enemigo>
+            <id>238</id>
+            <nombre>Djinni                                            </nombre>
+            <tipo>Elemental  </tipo>
+            <cr>11</cr>
+            <xp>7200</xp>
+          </enemigo>
+          <enemigo>
+            <id>27</id>
+            <nombre>Alquam, DL of Night                               </nombre>
+            <tipo>Fiend      </tipo>
+            <cr>21</cr>
+            <xp>33000</xp>
+          </enemigo>
+          <enemigo>
+            <id>956</id>
+            <nombre>Babosa verde venenosa Mortal                      </nombre>
+            <tipo>Limo       </tipo>
+            <cr>5</cr>
+            <xp>700</xp>
+          </enemigo>
+          <enemigo>
+            <id>139</id>
+            <nombre>Carrion Crawler                                   </nombre>
+            <tipo>Monstrosity</tipo>
+            <cr>2</cr>
+            <xp>450</xp>
+          </enemigo>
+          <enemigo>
+            <id>928</id>
+            <nombre>Yochlol                                           </nombre>
+            <tipo>Fiend      </tipo>
+            <cr>10</cr>
+            <xp>5900</xp>
+          </enemigo>
+          <enemigo>
+            <id>173</id>
+            <nombre>Clurichaun                                        </nombre>
+            <tipo>Fey        </tipo>
+            <cr>0</cr>
+            <xp>50</xp>
+          </enemigo>
+          <enemigo>
+            <id>279</id>
+            <nombre>Eala                                              </nombre>
+            <tipo>Monstrosity</tipo>
+            <cr>2</cr>
+            <xp>450</xp>
+          </enemigo>
+          <enemigo>
+            <id>360</id>
+            <nombre>Ghoul                                             </nombre>
+            <tipo>Undead     </tipo>
+            <cr>1</cr>
+            <xp>200</xp>
+          </enemigo>
+          <enemigo>
+            <id>683</id>
+            <nombre>Rakshasa                                          </nombre>
+            <tipo>Fiend      </tipo>
+            <cr>13</cr>
+            <xp>10000</xp>
+          </enemigo>
+          <enemigo>
+            <id>848</id>
+            <nombre>Tyrannosaurus Rex                                 </nombre>
+            <tipo>Beast      </tipo>
+            <cr>8</cr>
+            <xp>3900</xp>
+          </enemigo>
+          <enemigo>
+            <id>236</id>
+            <nombre>Dissimortuum                                      </nombre>
+            <tipo>Undead     </tipo>
+            <cr>7</cr>
+            <xp>2900</xp>
+          </enemigo>
+          <enemigo>
+            <id>652</id>
+            <nombre>Panther                                           </nombre>
+            <tipo>Beast      </tipo>
+            <cr>0</cr>
+            <xp>50</xp>
+          </enemigo>
+          <enemigo>
+            <id>151</id>
+            <nombre>Chelicerae                                        </nombre>
+            <tipo>Aberration </tipo>
+            <cr>7</cr>
+            <xp>2900</xp>
+          </enemigo>
+          <enemigo>
+            <id>809</id>
+            <nombre>Swarm of Rats                                     </nombre>
+            <tipo>Beast      </tipo>
+            <cr>0</cr>
+            <xp>50</xp>
+          </enemigo>
+          <enemigo>
+            <id>720</id>
+            <nombre>Salamander                                        </nombre>
+            <tipo>Elemental  </tipo>
+            <cr>5</cr>
+            <xp>1800</xp>
+          </enemigo>
+          <enemigo>
+            <id>251</id>
+            <nombre>Drake, Alehouse                                   </nombre>
+            <tipo>Dragon     </tipo>
+            <cr>0</cr>
+            <xp>100</xp>
+          </enemigo>
+          <enemigo>
+            <id>75</id>
+            <nombre>Balor                                             </nombre>
+            <tipo>Fiend      </tipo>
+            <cr>19</cr>
+            <xp>22000</xp>
+          </enemigo>
+          <enemigo>
+            <id>547</id>
+            <nombre>Lorelei                                           </nombre>
+            <tipo>Fey        </tipo>
+            <cr>5</cr>
+            <xp>1100</xp>
+          </enemigo>
+          <enemigo>
+            <id>342</id>
+            <nombre>Froghemoth                                        </nombre>
+            <tipo>Monstrosity</tipo>
+            <cr>10</cr>
+            <xp>5900</xp>
+          </enemigo>
+          <enemigo>
+            <id>163</id>
+            <nombre>Clockwork Abomination                             </nombre>
+            <tipo>Construct  </tipo>
+            <cr>5</cr>
+            <xp>1800</xp>
+          </enemigo>
+          <enemigo>
+            <id>598</id>
+            <nombre>Moss Lurker                                       </nombre>
+            <tipo>Humanoid   </tipo>
+            <cr>1</cr>
+            <xp>200</xp>
+          </enemigo>
+          <enemigo>
+            <id>883</id>
+            <nombre>War Ostrich                                       </nombre>
+            <tipo>Beast      </tipo>
+            <cr>0</cr>
+            <xp>100</xp>
+          </enemigo>
+          <enemigo>
+            <id>85</id>
+            <nombre>Basilisk                                          </nombre>
+            <tipo>Monstrosity</tipo>
+            <cr>3</cr>
+            <xp>700</xp>
+          </enemigo>
+          <enemigo>
+            <id>618</id>
+            <nombre>Nichny                                            </nombre>
+            <tipo>Fey        </tipo>
+            <cr>6</cr>
+            <xp>2300</xp>
+          </enemigo>
+          <enemigo>
+            <id>196</id>
+            <nombre>Death Butterfly Swarm                             </nombre>
+            <tipo>Beast      </tipo>
+            <cr>4</cr>
+            <xp>1100</xp>
+          </enemigo>
+          <enemigo>
+            <id>906</id>
+            <nombre>Wind Dragon (Adult)                               </nombre>
+            <tipo>Dragon     </tipo>
+            <cr>17</cr>
+            <xp>18000</xp>
+          </enemigo>
+          <enemigo>
+            <id>501</id>
+            <nombre>Jackal                                            </nombre>
+            <tipo>Beast      </tipo>
+            <cr>0</cr>
+            <xp>10</xp>
+          </enemigo>
+          <enemigo>
+            <id>484</id>
+            <nombre>Hundun                                            </nombre>
+            <tipo>Celestial  </tipo>
+            <cr>10</cr>
+            <xp>5900</xp>
+          </enemigo>
+          <enemigo>
+            <id>498</id>
+            <nombre>Iron Golem                                        </nombre>
+            <tipo>Construct  </tipo>
+            <cr>16</cr>
+            <xp>15000</xp>
+          </enemigo>
+          <enemigo>
+            <id>689</id>
+            <nombre>Raven                                             </nombre>
+            <tipo>Beast      </tipo>
+            <cr>0</cr>
+            <xp>10</xp>
+          </enemigo>
+          <enemigo>
+            <id>327</id>
+            <nombre>Flame Dragon (Adult)                              </nombre>
+            <tipo>Dragon     </tipo>
+            <cr>16</cr>
+            <xp>15000</xp>
+          </enemigo>
+          <enemigo>
+            <id>937</id>
+            <nombre>Young Red Shadow Dragon                           </nombre>
+            <tipo>Dragon     </tipo>
+            <cr>13</cr>
+            <xp>10000</xp>
+          </enemigo>
+          <enemigo>
+            <id>450</id>
+            <nombre>Guard                                             </nombre>
+            <tipo>Humanoid   </tipo>
+            <cr>0</cr>
+            <xp>25</xp>
+          </enemigo>
+          <enemigo>
+            <id>831</id>
+            <nombre>Tosculi Hive Queen                                </nombre>
+            <tipo>Monstrosity</tipo>
+            <cr>12</cr>
+            <xp>8400</xp>
+          </enemigo>
+          <enemigo>
+            <id>326</id>
+            <nombre>Flame Dragno (Wyrmling)                           </nombre>
+            <tipo>Dragon     </tipo>
+            <cr>3</cr>
+            <xp>700</xp>
+          </enemigo>
+          <enemigo>
+            <id>562</id>
+            <nombre>Martial Arts Adept                                </nombre>
+            <tipo>Humanoid   </tipo>
+            <cr>3</cr>
+            <xp>700</xp>
+          </enemigo>
+          <enemigo>
+            <id>192</id>
+            <nombre>Darkling                                          </nombre>
+            <tipo>Fey        </tipo>
+            <cr>0</cr>
+            <xp>100</xp>
+          </enemigo>
+          <enemigo>
+            <id>82</id>
+            <nombre>Bard                                              </nombre>
+            <tipo>Humanoid   </tipo>
+            <cr>2</cr>
+            <xp>450</xp>
+          </enemigo>
+          <enemigo>
+            <id>701</id>
+            <nombre>Revenant                                          </nombre>
+            <tipo>Undead     </tipo>
+            <cr>5</cr>
+            <xp>1800</xp>
+          </enemigo>
+          <enemigo>
+            <id>65</id>
+            <nombre>Awakened Shrub                                    </nombre>
+            <tipo>Plant      </tipo>
+            <cr>0</cr>
+            <xp>10</xp>
+          </enemigo>
+          <enemigo>
+            <id>806</id>
+            <nombre>Swarm of Insects                                  </nombre>
+            <tipo>Beast      </tipo>
+            <cr>0</cr>
+            <xp>100</xp>
+          </enemigo>
+          <enemigo>
+            <id>406</id>
+            <nombre>Githyanki Warrior                                 </nombre>
+            <tipo>Humanoid   </tipo>
+            <cr>3</cr>
+            <xp>700</xp>
+          </enemigo>
+          <enemigo>
+            <id>298</id>
+            <nombre>Emerald Order Cult Leader                         </nombre>
+            <tipo>Humanoid   </tipo>
+            <cr>8</cr>
+            <xp>3900</xp>
+          </enemigo>
+          <enemigo>
+            <id>131</id>
+            <nombre>Buraq                                             </nombre>
+            <tipo>Celestial  </tipo>
+            <cr>11</cr>
+            <xp>7200</xp>
+          </enemigo>
+          <enemigo>
+            <id>142</id>
+            <nombre>Cave Dragon (Adult)                               </nombre>
+            <tipo>Dragon     </tipo>
+            <cr>16</cr>
+            <xp>15000</xp>
+          </enemigo>
+          <enemigo>
+            <id>442</id>
+            <nombre>Grick                                             </nombre>
+            <tipo>Monstrosity</tipo>
+            <cr>2</cr>
+            <xp>450</xp>
+          </enemigo>
+          <enemigo>
+            <id>900</id>
+            <nombre>Weretiger                                         </nombre>
+            <tipo>Humanoid   </tipo>
+            <cr>4</cr>
+            <xp>1100</xp>
+          </enemigo>
+          <enemigo>
+            <id>810</id>
+            <nombre>Swarm of Ravens                                   </nombre>
+            <tipo>Beast      </tipo>
+            <cr>0</cr>
+            <xp>50</xp>
+          </enemigo>
+          <enemigo>
+            <id>447</id>
+            <nombre>Grung                                             </nombre>
+            <tipo>Humanoid   </tipo>
+            <cr>0</cr>
+            <xp>50</xp>
+          </enemigo>
+          <enemigo>
+            <id>346</id>
+            <nombre>Galeb Duhr                                        </nombre>
+            <tipo>Elemental  </tipo>
+            <cr>6</cr>
+            <xp>2300</xp>
+          </enemigo>
+          <enemigo>
+            <id>719</id>
+            <nombre>Sahuagin Priestess                                </nombre>
+            <tipo>Humanoid   </tipo>
+            <cr>2</cr>
+            <xp>450</xp>
+          </enemigo>
+          <enemigo>
+            <id>610</id>
+            <nombre>Nalfeshnee                                        </nombre>
+            <tipo>Fiend      </tipo>
+            <cr>13</cr>
+            <xp>10000</xp>
+          </enemigo>
+          <enemigo>
+            <id>325</id>
+            <nombre>Flail Snail                                       </nombre>
+            <tipo>Elemental  </tipo>
+            <cr>3</cr>
+            <xp>700</xp>
+          </enemigo>
+          <enemigo>
+            <id>734</id>
+            <nombre>Scout                                             </nombre>
+            <tipo>Humanoid   </tipo>
+            <cr>0</cr>
+            <xp>100</xp>
+          </enemigo>
+          <enemigo>
+            <id>242</id>
+            <nombre>Domovoi                                           </nombre>
+            <tipo>Fey        </tipo>
+            <cr>4</cr>
+            <xp>1100</xp>
+          </enemigo>
+          <enemigo reference="../enemigo[48]"/>
+          <enemigo reference="../enemigo[76]"/>
+          <enemigo>
+            <id>21</id>
+            <nombre>Akyishigal, DL of Cockroaches                     </nombre>
+            <tipo>Fiend      </tipo>
+            <cr>12</cr>
+            <xp>8400</xp>
+          </enemigo>
+          <enemigo>
+            <id>576</id>
+            <nombre>Millitaur                                         </nombre>
+            <tipo>Monstrosity</tipo>
+            <cr>3</cr>
+            <xp>700</xp>
+          </enemigo>
+          <enemigo>
+            <id>286</id>
+            <nombre>Elder Brain                                       </nombre>
+            <tipo>Aberration </tipo>
+            <cr>14</cr>
+            <xp>11500</xp>
+          </enemigo>
+          <enemigo>
+            <id>588</id>
+            <nombre>Mithral Dragon (Young)                            </nombre>
+            <tipo>Dragon     </tipo>
+            <cr>6</cr>
+            <xp>2300</xp>
+          </enemigo>
+          <enemigo>
+            <id>512</id>
+            <nombre>Kobold Chieftain                                  </nombre>
+            <tipo>Humanoid   </tipo>
+            <cr>4</cr>
+            <xp>1100</xp>
+          </enemigo>
+          <enemigo>
+            <id>208</id>
+            <nombre>Deer                                              </nombre>
+            <tipo>Beast      </tipo>
+            <cr>0</cr>
+            <xp>10</xp>
+          </enemigo>
+          <enemigo>
+            <id>381</id>
+            <nombre>Giant Goat                                        </nombre>
+            <tipo>Beast      </tipo>
+            <cr>0</cr>
+            <xp>100</xp>
+          </enemigo>
+          <enemigo>
+            <id>736</id>
+            <nombre>Sea Dragon (Ancient)                              </nombre>
+            <tipo>Dragon     </tipo>
+            <cr>22</cr>
+            <xp>41000</xp>
+          </enemigo>
+          <enemigo>
+            <id>375</id>
+            <nombre>Giant Crab                                        </nombre>
+            <tipo>Beast      </tipo>
+            <cr>0</cr>
+            <xp>25</xp>
+          </enemigo>
+          <enemigo>
+            <id>853</id>
+            <nombre>Unicorn                                           </nombre>
+            <tipo>Celestial  </tipo>
+            <cr>5</cr>
+            <xp>1800</xp>
+          </enemigo>
+          <enemigo>
+            <id>166</id>
+            <nombre>Clockwork Hound                                   </nombre>
+            <tipo>Construct  </tipo>
+            <cr>2</cr>
+            <xp>450</xp>
+          </enemigo>
+          <enemigo reference="../enemigo[73]"/>
+          <enemigo reference="../enemigo[77]"/>
+          <enemigo>
+            <id>657</id>
+            <nombre>Piercer                                           </nombre>
+            <tipo>Monstrosity</tipo>
+            <cr>0</cr>
+            <xp>100</xp>
+          </enemigo>
+          <enemigo>
+            <id>670</id>
+            <nombre>Purple Worm                                       </nombre>
+            <tipo>Monstrosity</tipo>
+            <cr>15</cr>
+            <xp>13000</xp>
+          </enemigo>
+          <enemigo reference="../enemigo[3]"/>
+          <enemigo>
+            <id>120</id>
+            <nombre>Brass Dragon Wyrmling                             </nombre>
+            <tipo>Dragon     </tipo>
+            <cr>1</cr>
+            <xp>200</xp>
+          </enemigo>
+          <enemigo reference="../enemigo[16]"/>
+          <enemigo>
+            <id>852</id>
+            <nombre>Umbral Vampire                                    </nombre>
+            <tipo>Fiend      </tipo>
+            <cr>7</cr>
+            <xp>2900</xp>
+          </enemigo>
+          <enemigo>
+            <id>140</id>
+            <nombre>Cat                                               </nombre>
+            <tipo>Beast      </tipo>
+            <cr>0</cr>
+            <xp>10</xp>
+          </enemigo>
+          <enemigo>
+            <id>630</id>
+            <nombre>Nycaloth                                          </nombre>
+            <tipo>Fiend      </tipo>
+            <cr>9</cr>
+            <xp>5000</xp>
+          </enemigo>
+          <enemigo>
+            <id>341</id>
+            <nombre>Frog                                              </nombre>
+            <tipo>Beast      </tipo>
+            <cr>0</cr>
+            <xp>0</xp>
+          </enemigo>
+          <enemigo>
+            <id>590</id>
+            <nombre>Mondrot Thrall                                    </nombre>
+            <tipo>Plant      </tipo>
+            <cr>3</cr>
+            <xp>700</xp>
+          </enemigo>
+          <enemigo>
+            <id>891</id>
+            <nombre>Warlock of the Great Old One                      </nombre>
+            <tipo>Humanoid   </tipo>
+            <cr>6</cr>
+            <xp>2300</xp>
+          </enemigo>
+          <enemigo>
+            <id>573</id>
+            <nombre>Merrow                                            </nombre>
+            <tipo>Monstrosity</tipo>
+            <cr>2</cr>
+            <xp>450</xp>
+          </enemigo>
+          <enemigo>
+            <id>79</id>
+            <nombre>Bandit Lord                                       </nombre>
+            <tipo>Humanoid   </tipo>
+            <cr>4</cr>
+            <xp>1100</xp>
+          </enemigo>
+          <enemigo>
+            <id>592</id>
+            <nombre>Monolith Champion                                 </nombre>
+            <tipo>Construct  </tipo>
+            <cr>8</cr>
+            <xp>3900</xp>
+          </enemigo>
+          <enemigo reference="../enemigo[61]"/>
+          <enemigo>
+            <id>729</id>
+            <nombre>Savager                                           </nombre>
+            <tipo>Beast      </tipo>
+            <cr>8</cr>
+            <xp>3900</xp>
+          </enemigo>
+          <enemigo>
+            <id>188</id>
+            <nombre>Cult Fanatic                                      </nombre>
+            <tipo>Humanoid   </tipo>
+            <cr>2</cr>
+            <xp>450</xp>
+          </enemigo>
+          <enemigo>
+            <id>599</id>
+            <nombre>Mouth of Grolantor                                </nombre>
+            <tipo>Giant      </tipo>
+            <cr>6</cr>
+            <xp>2300</xp>
+          </enemigo>
+          <enemigo>
+            <id>304</id>
+            <nombre>Erina Scounger                                    </nombre>
+            <tipo>Humanoid   </tipo>
+            <cr>0</cr>
+            <xp>50</xp>
+          </enemigo>
+          <enemigo>
+            <id>394</id>
+            <nombre>Giant Vulture                                     </nombre>
+            <tipo>Beast      </tipo>
+            <cr>1</cr>
+            <xp>200</xp>
+          </enemigo>
+          <enemigo>
+            <id>754</id>
+            <nombre>Shoggoth                                          </nombre>
+            <tipo>Aberration </tipo>
+            <cr>19</cr>
+            <xp>22000</xp>
+          </enemigo>
+          <enemigo>
+            <id>186</id>
+            <nombre>Crawling Claw                                     </nombre>
+            <tipo>Undead     </tipo>
+            <cr>0</cr>
+            <xp>10</xp>
+          </enemigo>
+          <enemigo>
+            <id>183</id>
+            <nombre>Cow                                               </nombre>
+            <tipo>Beast      </tipo>
+            <cr>0</cr>
+            <xp>50</xp>
+          </enemigo>
+          <enemigo reference="../enemigo[132]"/>
+          <enemigo>
+            <id>387</id>
+            <nombre>Giant Rat                                         </nombre>
+            <tipo>Beast      </tipo>
+            <cr>0</cr>
+            <xp>25</xp>
+          </enemigo>
+          <enemigo reference="../enemigo[2]"/>
+          <enemigo reference="../enemigo[88]"/>
+          <enemigo>
+            <id>821</id>
+            <nombre>Theullai                                          </nombre>
+            <tipo>Elemental  </tipo>
+            <cr>10</cr>
+            <xp>5900</xp>
+          </enemigo>
+          <enemigo>
+            <id>641</id>
+            <nombre>Orc Claw of Luthic                                </nombre>
+            <tipo>Humanoid   </tipo>
+            <cr>2</cr>
+            <xp>450</xp>
+          </enemigo>
+          <enemigo>
+            <id>538</id>
+            <nombre>Lindwurm                                          </nombre>
+            <tipo>Dragon     </tipo>
+            <cr>5</cr>
+            <xp>1800</xp>
+          </enemigo>
+          <enemigo>
+            <id>96</id>
+            <nombre>Bereginyas                                        </nombre>
+            <tipo>Fey        </tipo>
+            <cr>4</cr>
+            <xp>1100</xp>
+          </enemigo>
+          <enemigo>
+            <id>413</id>
+            <nombre>Gnoll                                             </nombre>
+            <tipo>Humanoid   </tipo>
+            <cr>0</cr>
+            <xp>100</xp>
+          </enemigo>
+          <enemigo reference="../enemigo[54]"/>
+          <enemigo>
+            <id>741</id>
+            <nombre>Sea Spawn                                         </nombre>
+            <tipo>Humanoid   </tipo>
+            <cr>1</cr>
+            <xp>200</xp>
+          </enemigo>
+          <enemigo reference="../enemigo[140]"/>
+          <enemigo>
+            <id>259</id>
+            <nombre>Drake, Star                                       </nombre>
+            <tipo>Dragon     </tipo>
+            <cr>15</cr>
+            <xp>13000</xp>
+          </enemigo>
+          <enemigo>
+            <id>591</id>
+            <nombre>Monodrone                                         </nombre>
+            <tipo>Construct  </tipo>
+            <cr>0</cr>
+            <xp>25</xp>
+          </enemigo>
+          <enemigo>
+            <id>916</id>
+            <nombre>Worg                                              </nombre>
+            <tipo>Monstrosity</tipo>
+            <cr>0</cr>
+            <xp>100</xp>
+          </enemigo>
+          <enemigo>
+            <id>275</id>
+            <nombre>Duodrone                                          </nombre>
+            <tipo>Construct  </tipo>
+            <cr>0</cr>
+            <xp>50</xp>
+          </enemigo>
+          <enemigo>
+            <id>440</id>
+            <nombre>Grell                                             </nombre>
+            <tipo>Aberration </tipo>
+            <cr>3</cr>
+            <xp>700</xp>
+          </enemigo>
+          <enemigo>
+            <id>436</id>
+            <nombre>Greater Death Butterfly Swarm                     </nombre>
+            <tipo>Beast      </tipo>
+            <cr>6</cr>
+            <xp>2300</xp>
+          </enemigo>
+          <enemigo>
+            <id>770</id>
+            <nombre>Soul Eater                                        </nombre>
+            <tipo>Fiend      </tipo>
+            <cr>7</cr>
+            <xp>2900</xp>
+          </enemigo>
+          <enemigo>
+            <id>345</id>
+            <nombre>Frostveil                                         </nombre>
+            <tipo>Plant      </tipo>
+            <cr>4</cr>
+            <xp>1100</xp>
+          </enemigo>
+          <enemigo>
+            <id>292</id>
+            <nombre>Elves, Shadow Fey Duelist                         </nombre>
+            <tipo>Humanoid   </tipo>
+            <cr>6</cr>
+            <xp>2300</xp>
+          </enemigo>
+          <enemigo>
+            <id>8</id>
+            <nombre>Acolyte                                           </nombre>
+            <tipo>Humanoid   </tipo>
+            <cr>0</cr>
+            <xp>50</xp>
+          </enemigo>
+          <enemigo>
+            <id>446</id>
+            <nombre>Grimlock                                          </nombre>
+            <tipo>Humanoid   </tipo>
+            <cr>0</cr>
+            <xp>50</xp>
+          </enemigo>
+          <enemigo reference="../enemigo[52]"/>
+          <enemigo>
+            <id>110</id>
+            <nombre>Bodak                                             </nombre>
+            <tipo>Undead     </tipo>
+            <cr>6</cr>
+            <xp>2300</xp>
+          </enemigo>
+          <enemigo>
+            <id>903</id>
+            <nombre>White Dragon Wyrmling                             </nombre>
+            <tipo>Dragon     </tipo>
+            <cr>2</cr>
+            <xp>450</xp>
+          </enemigo>
+          <enemigo>
+            <id>540</id>
+            <nombre>Liosalfar                                         </nombre>
+            <tipo>Elemental  </tipo>
+            <cr>8</cr>
+            <xp>3900</xp>
+          </enemigo>
+          <enemigo>
+            <id>761</id>
+            <nombre>Skin Bat                                          </nombre>
+            <tipo>Undead     </tipo>
+            <cr>0</cr>
+            <xp>100</xp>
+          </enemigo>
+          <enemigo>
+            <id>509</id>
+            <nombre>Knight                                            </nombre>
+            <tipo>Humanoid   </tipo>
+            <cr>3</cr>
+            <xp>700</xp>
+          </enemigo>
+          <enemigo>
+            <id>854</id>
+            <nombre>Uraeus                                            </nombre>
+            <tipo>Celestial  </tipo>
+            <cr>2</cr>
+            <xp>450</xp>
+          </enemigo>
+          <enemigo>
+            <id>838</id>
+            <nombre>Treant, Weeping                                   </nombre>
+            <tipo>Plant      </tipo>
+            <cr>6</cr>
+            <xp>2300</xp>
+          </enemigo>
+          <enemigo reference="../enemigo[48]"/>
+          <enemigo>
+            <id>514</id>
+            <nombre>Kobold Inventor                                   </nombre>
+            <tipo>Humanoid   </tipo>
+            <cr>0</cr>
+            <xp>50</xp>
+          </enemigo>
+          <enemigo reference="../enemigo[45]"/>
+          <enemigo>
+            <id>805</id>
+            <nombre>Swarm of Cranium Rats                             </nombre>
+            <tipo>Beast      </tipo>
+            <cr>5</cr>
+            <xp>1800</xp>
+          </enemigo>
+          <enemigo>
+            <id>470</id>
+            <nombre>Hezrou                                            </nombre>
+            <tipo>Fiend      </tipo>
+            <cr>8</cr>
+            <xp>3900</xp>
+          </enemigo>
+          <enemigo>
+            <id>874</id>
+            <nombre>Violet Fungus                                     </nombre>
+            <tipo>Plant      </tipo>
+            <cr>0</cr>
+            <xp>50</xp>
+          </enemigo>
+          <enemigo>
+            <id>855</id>
+            <nombre>Urochar (Strangling Watcher)                      </nombre>
+            <tipo>Aberration </tipo>
+            <cr>17</cr>
+            <xp>18000</xp>
+          </enemigo>
+          <enemigo>
+            <id>16</id>
+            <nombre>Adult Green Dragon                                </nombre>
+            <tipo>Dragon     </tipo>
+            <cr>15</cr>
+            <xp>13000</xp>
+          </enemigo>
+          <enemigo>
+            <id>712</id>
+            <nombre>Rotting Wind                                      </nombre>
+            <tipo>Undead     </tipo>
+            <cr>6</cr>
+            <xp>2300</xp>
+          </enemigo>
+          <enemigo>
+            <id>392</id>
+            <nombre>Giant Strider                                     </nombre>
+            <tipo>Monstrosity</tipo>
+            <cr>1</cr>
+            <xp>200</xp>
+          </enemigo>
+          <enemigo>
+            <id>350</id>
+            <nombre>Gauth (Lesser Beholder)                           </nombre>
+            <tipo>Aberration </tipo>
+            <cr>6</cr>
+            <xp>2300</xp>
+          </enemigo>
+          <enemigo reference="../enemigo[54]"/>
+          <enemigo>
+            <id>302</id>
+            <nombre>Eonic Drifter                                     </nombre>
+            <tipo>Humanoid   </tipo>
+            <cr>1</cr>
+            <xp>200</xp>
+          </enemigo>
+          <enemigo>
+            <id>32</id>
+            <nombre>Ancient Blue Dragon                               </nombre>
+            <tipo>Dragon     </tipo>
+            <cr>23</cr>
+            <xp>50000</xp>
+          </enemigo>
+          <enemigo>
+            <id>746</id>
+            <nombre>Shadow                                            </nombre>
+            <tipo>Undead     </tipo>
+            <cr>0</cr>
+            <xp>100</xp>
+          </enemigo>
+          <enemigo>
+            <id>886</id>
+            <nombre>Warflingi Swarm                                   </nombre>
+            <tipo>Beast      </tipo>
+            <cr>4</cr>
+            <xp>1100</xp>
+          </enemigo>
+          <enemigo reference="../enemigo[81]"/>
+          <enemigo reference="../enemigo[86]"/>
+          <enemigo>
+            <id>201</id>
+            <nombre>Death Tyrant                                      </nombre>
+            <tipo>Undead     </tipo>
+            <cr>14</cr>
+            <xp>11500</xp>
+          </enemigo>
+          <enemigo>
+            <id>210</id>
+            <nombre>Deinonychus                                       </nombre>
+            <tipo>Beast      </tipo>
+            <cr>1</cr>
+            <xp>200</xp>
+          </enemigo>
+          <enemigo>
+            <id>449</id>
+            <nombre>Grung Wildling                                    </nombre>
+            <tipo>Humanoid   </tipo>
+            <cr>1</cr>
+            <xp>200</xp>
+          </enemigo>
+          <enemigo>
+            <id>146</id>
+            <nombre>Cavelight moss                                    </nombre>
+            <tipo>Plant      </tipo>
+            <cr>4</cr>
+            <xp>1100</xp>
+          </enemigo>
+          <enemigo reference="../enemigo[42]"/>
+          <enemigo>
+            <id>569</id>
+            <nombre>Mechuiti, DL of Apes                              </nombre>
+            <tipo>Fiend      </tipo>
+            <cr>27</cr>
+            <xp>105000</xp>
+          </enemigo>
+          <enemigo>
+            <id>635</id>
+            <nombre>Ogre chieftan, Corrupted                          </nombre>
+            <tipo>Giant      </tipo>
+            <cr>6</cr>
+            <xp>2300</xp>
+          </enemigo>
+          <enemigo reference="../enemigo[39]"/>
+          <enemigo>
+            <id>102</id>
+            <nombre>Black Pudding                                     </nombre>
+            <tipo>Ooze       </tipo>
+            <cr>4</cr>
+            <xp>1100</xp>
+          </enemigo>
+          <enemigo>
+            <id>861</id>
+            <nombre>Vapor Lynx                                        </nombre>
+            <tipo>Monstrosity</tipo>
+            <cr>5</cr>
+            <xp>1800</xp>
+          </enemigo>
+          <enemigo>
+            <id>737</id>
+            <nombre>Sea Dragon (Wyrmling)                             </nombre>
+            <tipo>Dragon     </tipo>
+            <cr>2</cr>
+            <xp>450</xp>
+          </enemigo>
+          <enemigo>
+            <id>456</id>
+            <nombre>Hag, Blood                                        </nombre>
+            <tipo>Fey        </tipo>
+            <cr>11</cr>
+            <xp>7200</xp>
+          </enemigo>
+          <enemigo>
+            <id>640</id>
+            <nombre>Orc Blade of Ilneval                              </nombre>
+            <tipo>Humanoid   </tipo>
+            <cr>4</cr>
+            <xp>1100</xp>
+          </enemigo>
+          <enemigo>
+            <id>99</id>
+            <nombre>Black Bear                                        </nombre>
+            <tipo>Beast      </tipo>
+            <cr>0</cr>
+            <xp>100</xp>
+          </enemigo>
+          <enemigo reference="../enemigo[125]"/>
+          <enemigo reference="../enemigo[160]"/>
+          <enemigo>
+            <id>822</id>
+            <nombre>Thorny                                            </nombre>
+            <tipo>Plant      </tipo>
+            <cr>1</cr>
+            <xp>200</xp>
+          </enemigo>
+          <enemigo reference="../enemigo[127]"/>
+          <enemigo>
+            <id>361</id>
+            <nombre>Ghoul, Beggar                                     </nombre>
+            <tipo>Undead     </tipo>
+            <cr>0</cr>
+            <xp>50</xp>
+          </enemigo>
+          <enemigo reference="../enemigo[132]"/>
+          <enemigo>
+            <id>725</id>
+            <nombre>Sap Demon                                         </nombre>
+            <tipo>Ooze       </tipo>
+            <cr>4</cr>
+            <xp>1100</xp>
+          </enemigo>
+          <enemigo>
+            <id>372</id>
+            <nombre>Giant Boar                                        </nombre>
+            <tipo>Beast      </tipo>
+            <cr>2</cr>
+            <xp>450</xp>
+          </enemigo>
+          <enemigo>
+            <id>167</id>
+            <nombre>Clockwork Huntsman                                </nombre>
+            <tipo>Construct  </tipo>
+            <cr>3</cr>
+            <xp>700</xp>
+          </enemigo>
+          <enemigo reference="../enemigo[71]"/>
+          <enemigo reference="../enemigo[5]"/>
+          <enemigo>
+            <id>556</id>
+            <nombre>Mammoth                                           </nombre>
+            <tipo>Beast      </tipo>
+            <cr>6</cr>
+            <xp>2300</xp>
+          </enemigo>
+          <enemigo>
+            <id>834</id>
+            <nombre>Transmuter                                        </nombre>
+            <tipo>Humanoid   </tipo>
+            <cr>5</cr>
+            <xp>1800</xp>
+          </enemigo>
+          <enemigo>
+            <id>125</id>
+            <nombre>Bucca                                             </nombre>
+            <tipo>Fey        </tipo>
+            <cr>0</cr>
+            <xp>100</xp>
+          </enemigo>
+          <enemigo>
+            <id>473</id>
+            <nombre>Hobgoblin                                         </nombre>
+            <tipo>Humanoid   </tipo>
+            <cr>0</cr>
+            <xp>100</xp>
+          </enemigo>
+          <enemigo reference="../enemigo[171]"/>
+          <enemigo>
+            <id>454</id>
+            <nombre>Gynosphinx                                        </nombre>
+            <tipo>Monstrosity</tipo>
+            <cr>11</cr>
+            <xp>7200</xp>
+          </enemigo>
+          <enemigo>
+            <id>881</id>
+            <nombre>Vulture                                           </nombre>
+            <tipo>Beast      </tipo>
+            <cr>0</cr>
+            <xp>10</xp>
+          </enemigo>
+          <enemigo>
+            <id>679</id>
+            <nombre>Quetzalcoatlus                                    </nombre>
+            <tipo>Beast      </tipo>
+            <cr>2</cr>
+            <xp>450</xp>
+          </enemigo>
+          <enemigo>
+            <id>782</id>
+            <nombre>Spined Devil                                      </nombre>
+            <tipo>Fiend      </tipo>
+            <cr>2</cr>
+            <xp>450</xp>
+          </enemigo>
+          <enemigo reference="../enemigo[179]"/>
+          <enemigo>
+            <id>184</id>
+            <nombre>Crab                                              </nombre>
+            <tipo>Beast      </tipo>
+            <cr>0</cr>
+            <xp>10</xp>
+          </enemigo>
+          <enemigo>
+            <id>220</id>
+            <nombre>Deva                                              </nombre>
+            <tipo>Celestial  </tipo>
+            <cr>10</cr>
+            <xp>5900</xp>
+          </enemigo>
+          <enemigo>
+            <id>584</id>
+            <nombre>Mirager                                           </nombre>
+            <tipo>Fey        </tipo>
+            <cr>3</cr>
+            <xp>700</xp>
+          </enemigo>
+          <enemigo>
+            <id>785</id>
+            <nombre>Spirit Naga                                       </nombre>
+            <tipo>Monstrosity</tipo>
+            <cr>8</cr>
+            <xp>3900</xp>
+          </enemigo>
+          <enemigo>
+            <id>560</id>
+            <nombre>Marid                                             </nombre>
+            <tipo>Elemental  </tipo>
+            <cr>11</cr>
+            <xp>7200</xp>
+          </enemigo>
+          <enemigo>
+            <id>33</id>
+            <nombre>Ancient Brass Dragon                              </nombre>
+            <tipo>Dragon     </tipo>
+            <cr>20</cr>
+            <xp>25000</xp>
+          </enemigo>
+          <enemigo>
+            <id>813</id>
+            <nombre>Swarm, Prismatic Beetles                          </nombre>
+            <tipo>Beast      </tipo>
+            <cr>3</cr>
+            <xp>700</xp>
+          </enemigo>
+          <enemigo>
+            <id>923</id>
+            <nombre>Xvart                                             </nombre>
+            <tipo>Humanoid   </tipo>
+            <cr>0</cr>
+            <xp>25</xp>
+          </enemigo>
+          <enemigo reference="../enemigo[215]"/>
+          <enemigo>
+            <id>260</id>
+            <nombre>Drakon                                            </nombre>
+            <tipo>Beast      </tipo>
+            <cr>5</cr>
+            <xp>1800</xp>
+          </enemigo>
+          <enemigo>
+            <id>842</id>
+            <nombre>Troglodyte                                        </nombre>
+            <tipo>Humanoid   </tipo>
+            <cr>0</cr>
+            <xp>50</xp>
+          </enemigo>
+          <enemigo>
+            <id>471</id>
+            <nombre>Hill Giant                                        </nombre>
+            <tipo>Giant      </tipo>
+            <cr>5</cr>
+            <xp>1800</xp>
+          </enemigo>
+          <enemigo>
+            <id>355</id>
+            <nombre>Gerridae                                          </nombre>
+            <tipo>Fey        </tipo>
+            <cr>1</cr>
+            <xp>200</xp>
+          </enemigo>
+          <enemigo>
+            <id>503</id>
+            <nombre>Jaculus                                           </nombre>
+            <tipo>Dragon     </tipo>
+            <cr>3</cr>
+            <xp>700</xp>
+          </enemigo>
+          <enemigo>
+            <id>370</id>
+            <nombre>Giant Badger                                      </nombre>
+            <tipo>Beast      </tipo>
+            <cr>0</cr>
+            <xp>50</xp>
+          </enemigo>
+          <enemigo>
+            <id>499</id>
+            <nombre>Isonade                                           </nombre>
+            <tipo>Monstrosity</tipo>
+            <cr>14</cr>
+            <xp>11500</xp>
+          </enemigo>
+          <enemigo>
+            <id>150</id>
+            <nombre>Chasme                                            </nombre>
+            <tipo>Fiend      </tipo>
+            <cr>6</cr>
+            <xp>2300</xp>
+          </enemigo>
+          <enemigo>
+            <id>423</id>
+            <nombre>Goblin Boss                                       </nombre>
+            <tipo>Humanoid   </tipo>
+            <cr>1</cr>
+            <xp>200</xp>
+          </enemigo>
+          <enemigo>
+            <id>356</id>
+            <nombre>Ghast                                             </nombre>
+            <tipo>Undead     </tipo>
+            <cr>2</cr>
+            <xp>450</xp>
+          </enemigo>
+          <enemigo>
+            <id>297</id>
+            <nombre>Emerald Eye                                       </nombre>
+            <tipo>Construct  </tipo>
+            <cr>1</cr>
+            <xp>200</xp>
+          </enemigo>
+          <enemigo>
+            <id>629</id>
+            <nombre>Nothic                                            </nombre>
+            <tipo>Aberration </tipo>
+            <cr>2</cr>
+            <xp>450</xp>
+          </enemigo>
+          <enemigo reference="../enemigo[37]"/>
+          <enemigo reference="../enemigo[88]"/>
+          <enemigo reference="../enemigo[50]"/>
+          <enemigo>
+            <id>715</id>
+            <nombre>Rust Monster                                      </nombre>
+            <tipo>Monstrosity</tipo>
+            <cr>0</cr>
+            <xp>100</xp>
+          </enemigo>
+          <enemigo reference="../enemigo[152]"/>
+          <enemigo>
+            <id>364</id>
+            <nombre>Ghoul, Emperor of the Ghouls                      </nombre>
+            <tipo>Undead     </tipo>
+            <cr>20</cr>
+            <xp>25000</xp>
+          </enemigo>
+          <enemigo>
+            <id>14</id>
+            <nombre>Adult Copper Dragon                               </nombre>
+            <tipo>Dragon     </tipo>
+            <cr>14</cr>
+            <xp>11500</xp>
+          </enemigo>
+          <enemigo>
+            <id>868</id>
+            <nombre>Veteran                                           </nombre>
+            <tipo>Humanoid   </tipo>
+            <cr>3</cr>
+            <xp>700</xp>
+          </enemigo>
+          <enemigo>
+            <id>28</id>
+            <nombre>Alseid                                            </nombre>
+            <tipo>Monstrosity</tipo>
+            <cr>0</cr>
+            <xp>100</xp>
+          </enemigo>
+          <enemigo>
+            <id>532</id>
+            <nombre>Leshy                                             </nombre>
+            <tipo>Monstrosity</tipo>
+            <cr>1</cr>
+            <xp>200</xp>
+          </enemigo>
+          <enemigo>
+            <id>700</id>
+            <nombre>Remorhaz                                          </nombre>
+            <tipo>Monstrosity</tipo>
+            <cr>11</cr>
+            <xp>7200</xp>
+          </enemigo>
+          <enemigo>
+            <id>800</id>
+            <nombre>Subek                                             </nombre>
+            <tipo>Humanoid   </tipo>
+            <cr>5</cr>
+            <xp>1800</xp>
+          </enemigo>
+          <enemigo>
+            <id>672</id>
+            <nombre>Qorgeth, DL of the Devouring Worm                 </nombre>
+            <tipo>Fiend      </tipo>
+            <cr>23</cr>
+            <xp>50000</xp>
+          </enemigo>
+          <enemigo>
+            <id>637</id>
+            <nombre>Oni                                               </nombre>
+            <tipo>Giant      </tipo>
+            <cr>7</cr>
+            <xp>2900</xp>
+          </enemigo>
+          <enemigo>
+            <id>871</id>
+            <nombre>Vine  Blight                                      </nombre>
+            <tipo>Plant      </tipo>
+            <cr>0</cr>
+            <xp>100</xp>
+          </enemigo>
+          <enemigo>
+            <id>496</id>
+            <nombre>Intellect Devourer                                </nombre>
+            <tipo>Aberration </tipo>
+            <cr>2</cr>
+            <xp>450</xp>
+          </enemigo>
+          <enemigo>
+            <id>245</id>
+            <nombre>Dorreq                                            </nombre>
+            <tipo>Aberration </tipo>
+            <cr>4</cr>
+            <xp>1100</xp>
+          </enemigo>
+          <enemigo>
+            <id>353</id>
+            <nombre>Gearforged Templar                                </nombre>
+            <tipo>Humanoid   </tipo>
+            <cr>6</cr>
+            <xp>2300</xp>
+          </enemigo>
+          <enemigo>
+            <id>596</id>
+            <nombre>Morkoth                                           </nombre>
+            <tipo>Aberration </tipo>
+            <cr>11</cr>
+            <xp>7200</xp>
+          </enemigo>
+          <enemigo>
+            <id>616</id>
+            <nombre>Neothelid                                         </nombre>
+            <tipo>Aberration </tipo>
+            <cr>13</cr>
+            <xp>10000</xp>
+          </enemigo>
+          <enemigo>
+            <id>911</id>
+            <nombre>Winter Wolf                                       </nombre>
+            <tipo>Monstrosity</tipo>
+            <cr>3</cr>
+            <xp>700</xp>
+          </enemigo>
+          <enemigo>
+            <id>863</id>
+            <nombre>Vegepygmy                                         </nombre>
+            <tipo>Plant      </tipo>
+            <cr>0</cr>
+            <xp>50</xp>
+          </enemigo>
+          <enemigo>
+            <id>344</id>
+            <nombre>Frost Giant Everlasting One                       </nombre>
+            <tipo>Giant      </tipo>
+            <cr>12</cr>
+            <xp>8400</xp>
+          </enemigo>
+          <enemigo reference="../enemigo[61]"/>
+          <enemigo reference="../enemigo[171]"/>
+          <enemigo>
+            <id>445</id>
+            <nombre>Grim Jester                                       </nombre>
+            <tipo>Undead     </tipo>
+            <cr>11</cr>
+            <xp>7200</xp>
+          </enemigo>
+          <enemigo>
+            <id>650</id>
+            <nombre>Owlbear                                           </nombre>
+            <tipo>Beast      </tipo>
+            <cr>0</cr>
+            <xp>10</xp>
+          </enemigo>
+          <enemigo>
+            <id>212</id>
+            <nombre>Demon, Apau Perape                                </nombre>
+            <tipo>Fiend      </tipo>
+            <cr>6</cr>
+            <xp>2300</xp>
+          </enemigo>
+          <enemigo>
+            <id>366</id>
+            <nombre>Ghoul, Iron                                       </nombre>
+            <tipo>Undead     </tipo>
+            <cr>5</cr>
+            <xp>2900</xp>
+          </enemigo>
+          <enemigo>
+            <id>946</id>
+            <nombre>Yuan-ti Mind Whisperer                            </nombre>
+            <tipo>Monstrosity</tipo>
+            <cr>4</cr>
+            <xp>1100</xp>
+          </enemigo>
+          <enemigo reference="../enemigo[191]"/>
+          <enemigo>
+            <id>620</id>
+            <nombre>Night Scorpiono                                   </nombre>
+            <tipo>Beast      </tipo>
+            <cr>3</cr>
+            <xp>700</xp>
+          </enemigo>
+          <enemigo>
+            <id>862</id>
+            <nombre>Vargouille                                        </nombre>
+            <tipo>Fiend      </tipo>
+            <cr>1</cr>
+            <xp>200</xp>
+          </enemigo>
+          <enemigo>
+            <id>716</id>
+            <nombre>Saber-Toothed Tiger                               </nombre>
+            <tipo>Beast      </tipo>
+            <cr>2</cr>
+            <xp>450</xp>
+          </enemigo>
+          <enemigo>
+            <id>671</id>
+            <nombre>Putrid Haunt                                      </nombre>
+            <tipo>Undead     </tipo>
+            <cr>2</cr>
+            <xp>450</xp>
+          </enemigo>
+          <enemigo>
+            <id>639</id>
+            <nombre>Orc                                               </nombre>
+            <tipo>Humanoid   </tipo>
+            <cr>0</cr>
+            <xp>100</xp>
+          </enemigo>
+          <enemigo>
+            <id>116</id>
+            <nombre>Bone Naga                                         </nombre>
+            <tipo>Undead     </tipo>
+            <cr>4</cr>
+            <xp>1100</xp>
+          </enemigo>
+          <enemigo reference="../enemigo[155]"/>
+          <enemigo>
+            <id>673</id>
+            <nombre>Quadrone                                          </nombre>
+            <tipo>Construct  </tipo>
+            <cr>1</cr>
+            <xp>200</xp>
+          </enemigo>
+          <enemigo reference="../enemigo[116]"/>
+          <enemigo>
+            <id>955</id>
+            <nombre>Zombie                                            </nombre>
+            <tipo>Undead     </tipo>
+            <cr>0</cr>
+            <xp>50</xp>
+          </enemigo>
+          <enemigo>
+            <id>379</id>
+            <nombre>Giant Fire Beetle                                 </nombre>
+            <tipo>Beast      </tipo>
+            <cr>0</cr>
+            <xp>10</xp>
+          </enemigo>
+        </enemigos>
+      </enemigos>
+      <recompensas oroEntregable="143950">
+        <recompensas>
+          <recompensa>
+            <id>57</id>
+            <nombre>Universal solvent                                 </nombre>
+            <tipo>wondrous item  </tipo>
+            <rareza>5</rareza>
+          </recompensa>
+          <recompensa>
+            <id>45</id>
+            <nombre>Ring of three wishes                              </nombre>
+            <tipo>ring           </tipo>
+            <rareza>5</rareza>
+          </recompensa>
+          <recompensa>
+            <id>20</id>
+            <nombre>Armor of invulnerability                          </nombre>
+            <tipo>armor          </tipo>
+            <rareza>5</rareza>
+          </recompensa>
+        </recompensas>
+      </recompensas>
+    </encuentro>
+    <encuentro>
       <numeroPJ>2</numeroPJ>
       <nivelPJ>5</nivelPJ>
       <enemigos>
@@ -64,7 +1819,7 @@
           <enemigo reference="../enemigo[8]"/>
         </enemigos>
       </enemigos>
-      <recompensas>
+      <recompensas oroEntregable="0">
         <recompensas>
           <recompensa>
             <id>10</id>
@@ -116,7 +1871,7 @@
           </enemigo>
         </enemigos>
       </enemigos>
-      <recompensas>
+      <recompensas oroEntregable="0">
         <recompensas>
           <recompensa>
             <id>216</id>
