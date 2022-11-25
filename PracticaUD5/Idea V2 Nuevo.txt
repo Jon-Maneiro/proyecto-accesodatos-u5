@@ -26,5 +26,3 @@ Poder borrar el grupo completo, un personaje suelto, añadirle un personaje suel
 EN encuentros, poder quitar monstruos individuales, añadirlos, quitar personajes del grupo, añadirlos, y editar las recompensas. Parece mucho, espero que no lo sea.
 
 
-ERRORES CORREGIR
-.dat de los personajes, error de tamaño de campos
