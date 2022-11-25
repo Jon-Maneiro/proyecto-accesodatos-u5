@@ -270,6 +270,6 @@ public class Personaje implements Serializable {
     public void subirNivel(){
         //X + ((Y/2+1) + CPorNivel(Se aplica Retroactivamente))
         this.nivel++;
-        this.vida = vida + (((hitDie/2) + 1) + Con);
+        this.vida = (int) (vida + (((hitDie/2) + 1) + Math.floor((double)(Con - 10)/2)));
     }
 }

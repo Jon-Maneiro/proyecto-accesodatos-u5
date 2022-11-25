@@ -1,0 +1,40 @@
+<Seguimiento>
+	<CompletedEncounter result="Victoria/Derrota">
+		<Grupo nombre="nombre">
+			<Personajes>
+				<Personaje estado="sano/herido/muerto">
+					<Nombre></Nombre>
+					<Clase></Clase>
+					<Raza></Raza>
+					<Nivel></Nivel>
+				</Personaje>
+				<Personaje estado="sano/herido/muerto">
+					<Nombre></Nombre>
+					<Clase></Clase>
+					<Raza></Raza>
+					<Nivel></Nivel>
+				</Personaje>
+			</Personajes>
+		</Grupo>
+		<Encuentro>
+			<Enemigos>
+				<Enemigo>
+					<Nombre></Nombre>
+					<CR></CR>
+					<Cantidad></Cantidad>
+				</Enemigo>
+				<Enemigo>
+					<Nombre></Nombre>
+					<CR></CR>
+					<Cantidad></Cantidad>
+				</Enemigo>
+			</Enemigos>
+			<Recompensas>
+				<Recompensa>
+					<Nombre></Nombre>
+				</Recompensa>
+				<Oro> </Oro>
+			</Recompensas>
+		</Encuentro>
+	</CompletedEncounter>
+</Seguimiento>

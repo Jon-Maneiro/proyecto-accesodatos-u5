@@ -1,0 +1,42 @@
+<Grupos>
+	<Grupo nombre="nombre">
+		<Personajes>
+			<Personaje>
+				<Nombre></Nombre>
+				<Clase></Clase>
+				<Raza></Raza>
+				<Nivel></Nivel>
+				<Estadisticas>
+					<STR></STR>
+					<DEX></DEX>
+					<CON></CON>
+					<INT></INT>
+					<WIS></WIS>
+					<CHA></CHA>
+				</Estadisticas>
+			</Personaje>
+			<Personaje>
+				<Nombre></Nombre>
+				<Clase></Clase>
+				<Raza></Raza>
+				<Nivel></Nivel>
+				<Estadisticas>
+					<STR></STR>
+					<DEX></DEX>
+					<CON></CON>
+					<INT></INT>
+					<WIS></WIS>
+					<CHA></CHA>
+				</Estadisticas>
+			</Personaje>
+		</Personajes>
+		<MediaEstadisticas>
+			<MedSTR></MedSTR>
+			<MedDEX></MedDEX>
+			<MedCON></MedCON>
+			<MedINT></MedINT>
+			<MedWIS></MedWIS>
+			<MedCHA></MedCHA>
+		</MediaEstadisticas>
+	</Grupo>
+</Grupos>

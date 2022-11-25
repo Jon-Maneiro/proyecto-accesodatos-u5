@@ -1,0 +1,2 @@
+ERRORES CORREGIR
+.dat de los personajes, error de tamaño de campos
