@@ -39,5 +39,7 @@
       </library>
     </orderEntry>
     <orderEntry type="library" exported="" name="thoughtworks.xstream" level="project" />
+    <orderEntry type="library" name="exist-xqj-1.0.1" level="project" />
+    <orderEntry type="library" name="_xmlrpc-server-3.1.1" level="project" />
   </component>
 </module>

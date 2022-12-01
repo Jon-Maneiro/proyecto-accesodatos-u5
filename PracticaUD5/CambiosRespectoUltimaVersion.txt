@@ -2,9 +2,14 @@ Mayor
 -Nueva Clase Grupo 
 -Nueva Clase Listado Grupos
 -Nueva Clase Combate->(PENDIENTE) Terminar la clase
+-Nueva Clase existOperaciones - Para todo lo relacionado con Exist
+-
 
 Minor
 -Cambiado el algoritmo de subida de nivel. Ahora el aumento de vida se aplica correctamente. -> (int) (vida + (((hitDie/2) + 1) + Math.floor((double)(Con - 10)/2))); -> antes no se calculaba el modificador de la Constitucion, solo se utilizaba la estadistica, y esto es incorrecto. Las demás estadisticas siguen sin poder alterarse.
+-Creados nuevos menus para las nuevas funcionalidades
+-
 
 Errores
--(PENDIENTE) - Error con Personajes.dat a la hora de subir de nivel. Los parametros se descuadran y dan lugar a malformacion de datos
+-(PENDIENTE) - Error con Personajes.dat a la hora de subir de nivel. Los parametros se descuadran y dan lugar a malformacion de datos -> Se ha deprecado el metodo y se indicará que no debe usarse esa opcion en esta version
+-

@@ -166,6 +166,7 @@ public class ListadoPersonajes implements Serializable {
      * Subir el nivel del personaje del cual se pasa el ID
      * @param id el id del personaje al cual subirle el nivel
      */
+    @Deprecated
     public void subirNivel(int id){
         try {
             //Lo hago con el fichero por practicar realmente

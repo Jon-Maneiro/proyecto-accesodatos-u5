@@ -1,2 +1,2 @@
 ERRORES CORREGIR
-.dat de los personajes, error de tamaño de campos
+.dat de los personajes, error de tamaño de campos -> Se ha deprecado el metodo por falta de tiempo, , no usar esa parte(NO CORREGIDO/SIN AVANCES)

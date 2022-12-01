@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="_xmlrpc-server-3.1.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/librerias/XMLDB_exist/_xmlrpc-server-3.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/librerias/XMLDB_exist/exist.jar!/" />
+      <root url="jar://$PROJECT_DIR$/librerias/XMLDB_exist/log4j-1.2.15.jar!/" />
+      <root url="jar://$PROJECT_DIR$/librerias/XMLDB_exist/ws-commons-util-1.0.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/librerias/XMLDB_exist/xml-apis-1.3.04.jar!/" />
+      <root url="jar://$PROJECT_DIR$/librerias/XMLDB_exist/xmldb.jar!/" />
+      <root url="jar://$PROJECT_DIR$/librerias/XMLDB_exist/xmlrpc-client-3.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/librerias/XMLDB_exist/xmlrpc-common-3.1.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
