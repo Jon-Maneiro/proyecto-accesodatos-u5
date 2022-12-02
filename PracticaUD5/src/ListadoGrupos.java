@@ -14,7 +14,7 @@ public class ListadoGrupos implements Serializable {
     }
 
     public void llenarGrupos(){
-
+        grupos = existOperaciones.llenarGrupos();
     }
 
     public void add(Grupo g){

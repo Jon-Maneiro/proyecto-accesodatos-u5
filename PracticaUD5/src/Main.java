@@ -125,11 +125,12 @@ public class Main {
                 case 3://Party
                     menuParty = menuParty();
                     switch (menuParty) {
-                        case 1:
+                        case 1://Crear
+                            crearGrupo();
                             break;
-                        case 2:
+                        case 2://Borrar
                             break;
-                        case 3:
+                        case 3://Listado
                             break;
                         case 0:
                             salir = true;
@@ -153,7 +154,8 @@ public class Main {
                 case 5://Consultas eXist
                     menuConsultas = menuConsultas();
                     switch (menuConsultas) {
-                        case 1:
+                        case 1://Subir archivos a Exist !!IMPORTANTE!!
+                            existOperaciones.subirArchivos();
                             break;
                         case 2:
                             break;
@@ -190,7 +192,7 @@ public class Main {
             System.out.println("2 - Personajes");
             System.out.println("3 - Grupos");
             System.out.println("4 - Combates");
-            System.out.println("5 - Consultas EXist");
+            System.out.println("5 - EXist");
             Scanner sc = new Scanner(System.in);
             String respuesta = sc.nextLine();
             if (isInt(respuesta)) {
@@ -278,7 +280,7 @@ public class Main {
             System.out.println("--Bienvenido al menu de Grupo--");
             System.out.println("1 - Crear Grupo");
             System.out.println("2 - Borrar Grupo");
-            System.out.println("3 - Modificar Grupo?¿?¿");
+            System.out.println("3 - Listado Grupos");
             Scanner sc = new Scanner(System.in);
             String respuesta = sc.nextLine();
             if(isInt(respuesta)) {
@@ -324,7 +326,10 @@ public class Main {
         int selec = -1;
         while(!correcto){
             System.out.println("--Bienvenido al menu de Consultas--");
-            System.out.println("1 - Crear Grupo");
+            System.out.println("Recordatorio de que para poder trabajar con datos actualizados, hay que subir los archivos" +
+                    "\n cada vez que se cambie uno de los siguientes objetos:" +
+                    "\n Encuentros, Grupos");
+            System.out.println("1 - Subir archivos a Exist");
             System.out.println("2 - Borrar Grupo");
             System.out.println("3 - Modificar Grupo?¿?¿");
             Scanner sc = new Scanner(System.in);
@@ -386,10 +391,10 @@ public class Main {
         boolean correcto = false;
         while (!correcto) {
             check = sc.nextLine();
-            if (check.toUpperCase() == "Y") {
+            if (check.equalsIgnoreCase("Y")) {
                 resp = true;
                 correcto = true;
-            } else if (check.toUpperCase() == "N") {
+            } else if (check.equalsIgnoreCase("N")) {
                 resp = false;
                 correcto = true;
             } else {
@@ -422,9 +427,64 @@ public class Main {
 
     //_------------------------------------------------------------------------------------------------------------_
 
+    public static void crearGrupo(){
+        Scanner sc = new Scanner(System.in);
+        //Listamos los personajes primero
+        personajes.listarPersonajes();
+        String check = "";
+        boolean correcto = false;
+        int id = 0;
+
+
+        String nombreGrupo = "";
+        System.out.println("Introduce el nombre del grupo");
+        nombreGrupo = sc.nextLine();
+
+        Grupo grp = new Grupo(nombreGrupo);
+
+
+        System.out.println("A continuacion se van a pedir ids de personajes para agruparlos en un grupo");
+        correcto = false;
+        while(!correcto){
+            System.out.println("Introduce el ID del personaje que quieres agregar al grupo(Se permiten duplicados)");
+            check = sc.nextLine();
+            if(isInt(check)){
+                id = Integer.parseInt(check);
+                boolean existe = false;
+                for(Personaje p: personajes.getPersonajes()){
+                    if(p.getId() == id){
+                        existe = true;
+                        grp.addPJ(p);
+                        break;
+                    }
+                }
+                if(!existe){
+                    System.out.println("El id introducido no corresponde a ningun personaje");
+                }else{
+                    System.out.println("Se ha agregado el personaje al grupo");
+                    System.out.println("Deseas introducir mas personajes?");
+                    boolean mas = yesNo();
+                    if(!mas){
+                        correcto = true;
+                    }
+                }
+            }else{
+                System.out.println("Parece que no has introducido un numero, prueba de nuevo");
+            }
+        }
+
+        grp.calcularMedias();//Se calculas las medias de las estadisticas del grupo
+
+        ///Ahora pasamos a la insercion en xml del grupo
+        escribirGrupoAXML(grp);
+
+    }
+
+
     /**
      * Se piden datos para posteriormente subir de nivel a un personaje con su propio metodo
      */
+    @Deprecated
     public static void subirNivel() {
 
         Scanner sc = new Scanner(System.in);
@@ -721,8 +781,41 @@ public class Main {
             xstream.toXML(encuentros, new FileOutputStream("Encuentros.xml"));
 
         } catch (Exception e) {
+            System.out.println("No se ha encontrado el archivo \"Encuentros.xml\n y/o no se puede crear");
             e.printStackTrace();
         }
+
+    }
+
+    public static void escribirGrupoAXML(Grupo grupo){
+        ListadoGrupos grupos = new ListadoGrupos(false);
+        grupos.add(grupo);
+
+        File file = new File("Grupos.xml");
+        if(file.exists()){
+            ListadoGrupos temp = existOperaciones.leerGruposdeExist();//HAY QUE HACER ESTO AUAAAAAA
+            for(Grupo grp: temp.getGrupos()){
+                grupos.add(grp);
+            }
+        }
+        try {
+            XStream xstream = new XStream();
+            xstream.addPermission(AnyTypePermission.ANY);
+            xstream.alias("Grupos" , ListadoGrupos.class);
+            xstream.alias("grupo" , Grupo.class);
+            xstream.alias("Personajes" , ListadoPersonajes.class);
+            xstream.alias("personaje" , Personaje.class);
+            //xstream.useAttributeFor(Grupo.class,"nombre");
+            //xstream.aliasField("nombre",Grupo.class, "nombre");
+            xstream.processAnnotations(Grupo.class);
+
+            xstream.toXML(grupos, new FileOutputStream("Grupos.xml"));
+        } catch (FileNotFoundException e) {
+            System.out.println("No se ha encontrado el archivo \"Grupos.xml\n y/o no se puede crear");
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+
 
     }
 

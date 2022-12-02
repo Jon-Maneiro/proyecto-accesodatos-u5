@@ -1,11 +1,12 @@
 import org.xmldb.api.DatabaseManager;
-import org.xmldb.api.base.Database;
-import org.xmldb.api.base.XMLDBException;
+import org.xmldb.api.base.*;
 
 import java.io.File;
 import java.lang.reflect.InvocationTargetException;
-import org.xmldb.api.base.Collection;
+import java.util.ArrayList;
+
 import org.xmldb.api.modules.XMLResource;
+import org.xmldb.api.modules.XPathQueryService;
 
 public class existOperaciones {
 
@@ -66,18 +67,66 @@ public class existOperaciones {
                 res.setContent(file);
                 col.storeResource(res);
 
+
+                res = (XMLResource) col.createResource("Grupos.xml","XMLResource");
+                file = new File("Grupos.xml");
+                res.setContent(file);
+                col.storeResource(res);
+
                 for(String x: col.listResources()){
                     System.out.println(x);
                 }
 
-
+                System.out.println("Se han subido los archivos satisfactoriamente");
 
                 col.close();
             } catch (XMLDBException e) {
+                System.out.println("Ha ocurrido un error al intentar subir los datos");
                 throw new RuntimeException(e);
             }
         }else{
             System.out.println("Se ha producido un error en la conexion.\n Comprueba las variables de conexion");
         }
     }
+
+
+    public static ArrayList<Grupo> llenarGrupos(){
+        if(conectar() != null){
+            try{
+                XPathQueryService srv;
+                srv = (XPathQueryService) col.getService("XPathQueryService", "1.0");
+
+                ResourceSet result = srv.query("for $grupo in /Grupos/grupos/grupo return $grupo");
+
+                ResourceIterator i;
+                i = result.getIterator();
+                if(!i.hasMoreResources()){
+                    System.out.println("No se encuentran datos. Si existen datos en la BBDD es que hay error");
+                }
+
+                while(i.hasMoreResources()){
+                    Resource r = i.nextResource();
+                    System.out.println("-----------------------------------------------------------");
+                    System.out.println((String) r.getContent());
+                }
+                col.close();
+
+            } catch (XMLDBException e) {
+                System.out.println("Ha ocurrido un error al intentar crear el servicio");
+                e.printStackTrace();
+                throw new RuntimeException(e);
+            }
+        }else{
+            System.out.println("Se ha producido un error en la conexion.\n Comprueba las variables de conexion");
+        }
+        return new ArrayList<Grupo>();
+    }
+
+    public static ListadoGrupos leerGruposdeExist(){
+        /**
+         * TODO
+         */
+        return new ListadoGrupos(false);
+    }
+
 }

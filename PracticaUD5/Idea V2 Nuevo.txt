@@ -17,6 +17,10 @@ XML-
 			Y igual más opciones, como permitir insertar comentarios.
 
 
+Hay que pensar un poco mejor la logica de los XML, para los grupos principalmente.
+	¿Chequeo unicamente con el de Exists sin preocuparme de que el local exista, y, cuando haya que subir el local, hago que en lugar de sobreescribir, añada datos?
+	¿Compruebo ambos y, al inicio del programa, me descargo el de exist, y despues lo vuelvo a subir?
+
 Cada uno de los xml permitirá hacer select individual de las cosas, y pensar en consultas más complejas.
 Se me ocurre poder hacer búsqueda por comentarios y/o etiquetas.
 

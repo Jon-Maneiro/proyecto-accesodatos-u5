@@ -1,8 +1,13 @@
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
+
 import java.io.Serializable;
 
 public class Grupo implements Serializable {
 
     ListadoPersonajes ls = new ListadoPersonajes(false);
+    @XStreamAlias("nombre")
+    @XStreamAsAttribute()
     String nombre = "";
     int MedSTR = 0;
     int MedDEX = 0;
@@ -14,6 +19,7 @@ public class Grupo implements Serializable {
     public Grupo(String nombre) {
         this.nombre = nombre;
     }
+
     /**
      *
      * @param pj
