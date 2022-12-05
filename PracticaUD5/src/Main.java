@@ -33,7 +33,7 @@ public class Main {
         System.out.println("Este generador generará encuentros aleatorios para tus partidas. ");
         System.out.println("No será muy util en casos reales, pero ha sido divertido de programar.");
         System.out.println("A continuacion habrá una serie de pasos a seguir, dependiendo de lo que quieras hacer.");
-        System.out.println("Como detalle, si introduces 0, el numero, en cualquiera de los menus, se terminará el programa.");
+        System.out.println("Si se introduce 0 , volverá atras. Desde el menu principal, se sale de la ejecucion.");
         System.out.println("(Los de introduccion de datos no cuentan)");
         System.out.println("..Cargando..");
         Thread.sleep(1500);//Si, he hecho esto para que parezca mas interesante
@@ -96,7 +96,6 @@ public class Main {
                             recompensas.ListarRecompensas();
                             break;
                         case 0://Salir
-                            salir = true;
                             break;
                     }
                     break;
@@ -117,7 +116,6 @@ public class Main {
                             break;
 
                         case 0:
-                            salir = true;
                             break;
                     }
                     break;
@@ -133,7 +131,6 @@ public class Main {
                         case 3://Listado
                             break;
                         case 0:
-                            salir = true;
                             break;
                     }
                     break;
@@ -147,7 +144,6 @@ public class Main {
                         case 3:
                             break;
                         case 0:
-                            salir = true;
                             break;
                     }
                     break;
@@ -162,7 +158,6 @@ public class Main {
                         case 3:
                             break;
                         case 0:
-                            salir = true;
                             break;
                     }
                     break;
@@ -302,6 +297,8 @@ public class Main {
         int selec = -1;
         while(!correcto){
             System.out.println("--Bienvenido al menu de Combate--");
+            System.out.println("Recuerda que antes de trabajar con Combates, tienes que subir los datos a la Coleccion" +
+                    "\n mediante el metodo del menu Exist");
             System.out.println("1 - Crear Combate");
             System.out.println("2 - Borrar Combate");
             System.out.println("3 - Modificar Combate?¿?¿");
@@ -325,7 +322,7 @@ public class Main {
         boolean correcto = false;
         int selec = -1;
         while(!correcto){
-            System.out.println("--Bienvenido al menu de Consultas--");
+            System.out.println("--Bienvenido al menu de Exist--");
             System.out.println("Recordatorio de que para poder trabajar con datos actualizados, hay que subir los archivos" +
                     "\n cada vez que se cambie uno de los siguientes objetos:" +
                     "\n Encuentros, Grupos");
@@ -476,7 +473,12 @@ public class Main {
         grp.calcularMedias();//Se calculas las medias de las estadisticas del grupo
 
         ///Ahora pasamos a la insercion en xml del grupo
-        escribirGrupoAXML(grp);
+        try {
+            escribirGrupoAXML(grp);
+        } catch (FileNotFoundException e) {
+            System.out.println("No se ha encontrado el archivo Grupos.xml");
+            throw new RuntimeException(e);
+        }
 
     }
 
@@ -787,13 +789,13 @@ public class Main {
 
     }
 
-    public static void escribirGrupoAXML(Grupo grupo){
+    public static void escribirGrupoAXML(Grupo grupo) throws FileNotFoundException {
         ListadoGrupos grupos = new ListadoGrupos(false);
         grupos.add(grupo);
 
         File file = new File("Grupos.xml");
         if(file.exists()){
-            ListadoGrupos temp = existOperaciones.leerGruposdeExist();//HAY QUE HACER ESTO AUAAAAAA
+            ListadoGrupos temp = leerGruposDeXML();//existOperaciones.leerGruposdeExist();//HAY QUE HACER ESTO AUAAAAAA
             for(Grupo grp: temp.getGrupos()){
                 grupos.add(grp);
             }
@@ -845,6 +847,25 @@ public class Main {
 
         //Leer esto con un Iterator
         return encuentros;
+    }
+
+    public static ListadoGrupos leerGruposDeXML() throws FileNotFoundException {
+
+        XStream xstream = new XStream();
+        xstream.addPermission(AnyTypePermission.ANY);
+        xstream.alias("Grupos" , ListadoGrupos.class);
+        xstream.alias("grupo" , Grupo.class);
+        xstream.alias("Personajes" , ListadoPersonajes.class);
+        xstream.alias("personaje" , Personaje.class);
+        //xstream.useAttributeFor(Grupo.class,"nombre");
+        //xstream.aliasField("nombre",Grupo.class, "nombre");
+        xstream.processAnnotations(Grupo.class);
+
+        FileInputStream fichero = new FileInputStream("Grupos.xml");
+        ListadoGrupos grupos = (ListadoGrupos) xstream.fromXML(fichero);
+
+        //Leer esto con un iterator
+        return grupos;
     }
 
     /**

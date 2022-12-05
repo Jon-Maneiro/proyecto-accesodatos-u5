@@ -123,9 +123,21 @@ public class existOperaciones {
     }
 
     public static ListadoGrupos leerGruposdeExist(){
-        /**
-         * TODO
-         */
+        ListadoGrupos temp = new ListadoGrupos(false);
+
+        if(conectar() != null){
+            try{
+                XPathQueryService srv;
+                srv = (XPathQueryService) col.getService("XPathQueryService" , "1.0");
+                /**
+                 * Continuar haciendolo
+                 */
+            } catch (XMLDBException e) {
+                System.out.println("Ha ocurrido un error al intentar crear el servicio");
+                throw new RuntimeException(e);
+            }
+        }
+
         return new ListadoGrupos(false);
     }
 
