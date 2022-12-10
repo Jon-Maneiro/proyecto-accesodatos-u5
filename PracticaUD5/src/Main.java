@@ -36,7 +36,7 @@ public class Main {
         System.out.println("Si se introduce 0 , volverá atras. Desde el menu principal, se sale de la ejecucion.");
         System.out.println("(Los de introduccion de datos no cuentan)");
         System.out.println("..Cargando..");
-        Thread.sleep(1500);//Si, he hecho esto para que parezca mas interesante
+        //Thread.sleep(1500);//Si, he hecho esto para que parezca mas interesante
         boolean salir = false;
         int menuPrincipal = -1;
         int menuEncuentros = -1;
@@ -129,6 +129,7 @@ public class Main {
                         case 2://Borrar
                             break;
                         case 3://Listado
+                            existOperaciones.leerGrupos();
                             break;
                         case 0:
                             break;
@@ -473,12 +474,7 @@ public class Main {
         grp.calcularMedias();//Se calculas las medias de las estadisticas del grupo
 
         ///Ahora pasamos a la insercion en xml del grupo
-        try {
-            escribirGrupoAXML(grp);
-        } catch (FileNotFoundException e) {
-            System.out.println("No se ha encontrado el archivo Grupos.xml");
-            throw new RuntimeException(e);
-        }
+        existOperaciones.insertarGrupo(grp);
 
     }
 
@@ -810,6 +806,8 @@ public class Main {
             //xstream.useAttributeFor(Grupo.class,"nombre");
             //xstream.aliasField("nombre",Grupo.class, "nombre");
             xstream.processAnnotations(Grupo.class);
+            xstream.addImplicitCollection(ListadoGrupos.class,"grupos");
+            xstream.addImplicitCollection(ListadoPersonajes.class,"personajes");
 
             xstream.toXML(grupos, new FileOutputStream("Grupos.xml"));
         } catch (FileNotFoundException e) {

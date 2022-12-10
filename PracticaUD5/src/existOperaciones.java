@@ -68,10 +68,10 @@ public class existOperaciones {
                 col.storeResource(res);
 
 
-                res = (XMLResource) col.createResource("Grupos.xml","XMLResource");
+                /*res = (XMLResource) col.createResource("Grupos.xml","XMLResource");
                 file = new File("Grupos.xml");
                 res.setContent(file);
-                col.storeResource(res);
+                col.storeResource(res);*/
 
                 for(String x: col.listResources()){
                     System.out.println(x);
@@ -89,14 +89,58 @@ public class existOperaciones {
         }
     }
 
+    public static void insertarGrupo(Grupo grupo){
+        String nuevoGrupo = "<Grupo nombre=\""+grupo.nombre+"\"> <Personajes>";
 
-    public static ArrayList<Grupo> llenarGrupos(){
+        for(Personaje p:grupo.ls.getPersonajes()){
+            nuevoGrupo = nuevoGrupo + "<personaje>" +
+                    "<nombre>"+p.getNombre()+"</nombre>" +
+                    "<clase>"+p.getClase()+"</clase>" +
+                "<raza>"+p.getRaza()+"</raza>" +
+                "<nivel>"+p.getNivel()+"</nivel>" +
+                "<Estadisticas>" +
+                "<STR>"+p.getStr()+"</STR>" +
+                "<DEX>"+p.getDex()+"</DEX>" +
+                "<CON>"+p.getCon()+"</CON>" +
+                "<INT>"+p.getInt()+"</INT>" +
+                "<WIS>"+p.getWis()+"</WIS>" +
+                "<CHA>"+p.getCha()+"</CHA>" +
+                "</Estadisticas></personaje>";
+        }
+
+        nuevoGrupo = nuevoGrupo + "</Personajes><MediaEstadisticas>" +
+                "<MedSTR>"+grupo.getMedSTR()+"</MedSTR>" +
+                "<MedDEX>"+grupo.getMedDEX()+"</MedDEX>" +
+                "<MedCON>"+grupo.getMedCON()+"</MedCON>" +
+                "<MedINT>"+grupo.getMedINT()+"</MedINT>" +
+                "<MedWIS>"+grupo.getMedWIS()+"</MedWIS>" +
+                "<MedCHA>"+grupo.getMedCHA()+"</MedCHA></MediaEstadisticas></Grupo>";
+
+        if(conectar() != null){
+            try{
+                XPathQueryService srv = (XPathQueryService) col.getService("XPathQueryService","1.0");
+
+                ResourceSet result = srv.query("update insert " + nuevoGrupo + "into /Grupos");
+                col.close();
+                System.out.println("Se ha introducido el nuevo grupo");
+
+            } catch (XMLDBException e) {
+                System.out.println("Ha ocurrido un error al insertar el grupo");
+                throw new RuntimeException(e);
+            }
+        }else{
+            System.out.println("Se ha producido un error en la conexion.\n Comprueba las variables de conexion");
+        }
+
+    }
+
+    public static void leerGrupos(){
         if(conectar() != null){
             try{
                 XPathQueryService srv;
                 srv = (XPathQueryService) col.getService("XPathQueryService", "1.0");
 
-                ResourceSet result = srv.query("for $grupo in /Grupos/grupos/grupo return $grupo");
+                ResourceSet result = srv.query("for $grupo in /Grupos/grupo return $grupo");
 
                 ResourceIterator i;
                 i = result.getIterator();
@@ -119,26 +163,6 @@ public class existOperaciones {
         }else{
             System.out.println("Se ha producido un error en la conexion.\n Comprueba las variables de conexion");
         }
-        return new ArrayList<Grupo>();
-    }
-
-    public static ListadoGrupos leerGruposdeExist(){
-        ListadoGrupos temp = new ListadoGrupos(false);
-
-        if(conectar() != null){
-            try{
-                XPathQueryService srv;
-                srv = (XPathQueryService) col.getService("XPathQueryService" , "1.0");
-                /**
-                 * Continuar haciendolo
-                 */
-            } catch (XMLDBException e) {
-                System.out.println("Ha ocurrido un error al intentar crear el servicio");
-                throw new RuntimeException(e);
-            }
-        }
-
-        return new ListadoGrupos(false);
     }
 
 }
