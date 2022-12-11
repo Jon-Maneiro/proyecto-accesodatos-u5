@@ -165,4 +165,41 @@ public class existOperaciones {
         }
     }
 
+    public static boolean grupoExiste(String nombre){
+        if(conectar() != null){
+            try{
+                XPathQueryService srv;
+                srv = (XPathQueryService) col.getService("XPathQueryService", "1.0");
+
+                ResourceSet result = srv.query("for $nombre in /Grupos/Grupo/data([@nombre]) return $nombre");
+
+                ResourceIterator i;
+                i = result.getIterator();
+                if(!i.hasMoreResources()){
+                    System.out.println("No se encuentran datos. Si existen datos en la BBDD es que hay error");
+                }
+
+                boolean existe = false;
+                while(i.hasMoreResources()){
+                    Resource r = i.nextResource();
+                    if((String)r.getContent() == nombre){
+                        existe = true;
+                    }
+                }
+
+                if(existe){
+                    return true;
+                }else{
+                    return false;
+                }
+
+            } catch (XMLDBException e) {
+                System.out.println("Ha ocurrido un error al intentar crear el servicio");
+                throw new RuntimeException(e);
+            }
+        }else{
+            System.out.println("Se ha producido un error en la conexion.\n Comprueba las variables de conexion");
+        }
+        return false;//Si se devuelve esto es por errores
+    }
 }

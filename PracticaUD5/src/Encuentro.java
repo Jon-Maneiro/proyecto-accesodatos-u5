@@ -1,3 +1,10 @@
+import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
+import com.thoughtworks.xstream.security.AnyTypePermission;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.Serializable;
 
 public class Encuentro implements Serializable {
@@ -10,8 +17,21 @@ public class Encuentro implements Serializable {
     private int numeroPJ;
     private int nivelPJ;
 
+    @XStreamAlias("id")
+    @XStreamAsAttribute()
+    int id;
+
     private ListaEnemigos enemigos;
     private ListaRecompensas recompensas;
+
+
+    public Encuentro(int id,int numeroPJ, int nivelPJ, ListaEnemigos enemigos, ListaRecompensas recompensas) {
+        this.id = id;
+        this.numeroPJ = numeroPJ;
+        this.nivelPJ = nivelPJ;
+        this.enemigos = enemigos;
+        this.recompensas = recompensas;
+    }
 
     /**
      * Constructor de la clase encuentro
@@ -25,6 +45,33 @@ public class Encuentro implements Serializable {
         this.nivelPJ = nivelPJ;
         this.enemigos = enemigos;
         this.recompensas = recompensas;
+    }
+
+    public void obtenerId(){
+
+
+        XStream xstream = new XStream();
+        xstream.addPermission(AnyTypePermission.ANY);
+        xstream.alias("Encuentros", ListaEncuentros.class);
+        xstream.alias("encuentro", Encuentro.class);
+        xstream.alias("Enemigos", ListaEnemigos.class);
+        xstream.alias("enemigo", Enemigo.class);
+        xstream.alias("Recompensas", ListaRecompensas.class);
+        xstream.alias("recompensa", Recompensa.class);
+        xstream.processAnnotations(ListaRecompensas.class);
+        //xstream.addImplicitCollection(ListaEncuentros.class, "lista");
+
+        FileInputStream fichero = null;
+        try {
+            fichero = new FileInputStream("Encuentros.xml");
+        } catch (FileNotFoundException e) {
+            System.out.println("Error al abrir el archivo Encuentros.xml");
+            throw new RuntimeException(e);
+        }
+        ListaEncuentros encuentros = (ListaEncuentros) xstream.fromXML(fichero);
+
+        this.id = encuentros.getEncuentros().size();
+
     }
 
     /**

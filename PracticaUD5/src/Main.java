@@ -20,6 +20,8 @@ public class Main {
 
     static ListadoPersonajes personajes = new ListadoPersonajes(true);
 
+    static ListaEncuentros encuentros = new ListaEncuentros(true);
+
     /**
      * Metodo principal de la ejecucion
      *
@@ -53,7 +55,9 @@ public class Main {
                     switch (menuEncuentros) {
                         case 1://Generar encuentro
                             try {
-                                escribirEncuentroAXML(generacionDeEncuentro());
+                                Encuentro en = generacionDeEncuentro();
+                                escribirEncuentroAXML(en);
+                                encuentros.add(en);
                             } catch (FileNotFoundException e) {
                                 System.out.println("No se ha encontrado el archivo, no debería de salir este error. ");
                                 //throw new RuntimeException(e);
@@ -138,7 +142,8 @@ public class Main {
                 case 4://Combate
                     menuCombate = menuCombate();
                     switch (menuCombate) {
-                        case 1:
+                        case 1://Crear
+                            crearCombate();
                             break;
                         case 2:
                             break;
@@ -326,7 +331,7 @@ public class Main {
             System.out.println("--Bienvenido al menu de Exist--");
             System.out.println("Recordatorio de que para poder trabajar con datos actualizados, hay que subir los archivos" +
                     "\n cada vez que se cambie uno de los siguientes objetos:" +
-                    "\n Encuentros, Grupos");
+                    "\n Encuentros");
             System.out.println("1 - Subir archivos a Exist");
             System.out.println("2 - Borrar Grupo");
             System.out.println("3 - Modificar Grupo?¿?¿");
@@ -478,6 +483,41 @@ public class Main {
 
     }
 
+    public static void crearCombate() {
+        Scanner sc = new Scanner(System.in);
+
+        String nomGrupo = "";
+        int idEncuentro = 0;
+
+        System.out.println("---------------------------------------------------");
+        System.out.println("--------------------GRUPOS-------------------------");
+        System.out.println("---------------------------------------------------");
+        existOperaciones.leerGrupos();
+
+        System.out.println("Por favor introduce el nombre del grupo que deseas utilizar");
+
+        boolean correcto = false;
+        while(!correcto){
+            //AQUI ME HE QUEDADO
+        }
+
+
+        System.out.println("---------------------------------------------------");
+        System.out.println("---------------------ENCUENTROS--------------------");
+        System.out.println("---------------------------------------------------");
+        try {
+            presentarEncuentros(leerEncuentrosDeXML());
+        } catch (FileNotFoundException e) {
+            System.out.println("Fallo al encontrar el archivo Encuentros.xml");
+            throw new RuntimeException(e);
+        }
+
+
+
+
+
+
+    }
 
     /**
      * Se piden datos para posteriormente subir de nivel a un personaje con su propio metodo
@@ -773,6 +813,7 @@ public class Main {
             xstream.alias("Recompensas", ListaRecompensas.class);
             xstream.alias("recompensa", Recompensa.class);
             xstream.processAnnotations(ListaRecompensas.class);
+            xstream.processAnnotations(ListaEncuentros.class);
 
             //xstream.addImplicitCollection(ListaEncuentros.class, "lista");
 
