@@ -498,7 +498,13 @@ public class Main {
 
         boolean correcto = false;
         while(!correcto){
-            //AQUI ME HE QUEDADO
+            nomGrupo = sc.nextLine();
+            if(existOperaciones.grupoExiste(nomGrupo)){
+                correcto = true;
+                System.out.println("Se ha encontrado el grupo");
+            }else{
+                System.out.println("Ese grupo no existe, prueba otra vez");
+            }
         }
 
 
@@ -510,6 +516,16 @@ public class Main {
         } catch (FileNotFoundException e) {
             System.out.println("Fallo al encontrar el archivo Encuentros.xml");
             throw new RuntimeException(e);
+        }
+
+        correcto = false;
+        while(!correcto){
+            String temp = sc.nextLine();
+            if(isInt(temp)){
+
+            }else{
+                System.out.println("Lo que has introducido no es un numero");
+            }
         }
 
 
