@@ -522,7 +522,12 @@ public class Main {
         while(!correcto){
             String temp = sc.nextLine();
             if(isInt(temp)){
-
+                idEncuentro = Integer.parseInt(temp);
+                if(existOperaciones.encuentroExiste(idEncuentro)){
+                    correcto = true;
+                }else{
+                    System.out.println("Ese encuentro no existe");
+                }
             }else{
                 System.out.println("Lo que has introducido no es un numero");
             }

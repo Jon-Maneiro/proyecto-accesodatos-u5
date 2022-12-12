@@ -134,6 +134,50 @@ public class existOperaciones {
 
     }
 
+    public static void insertarCombate(int idCombate, String nombreGrupo){
+
+            String nuevoCombate = "update insert \n" +
+                    "<combate id=\"PLACEHOLDER\">\n" +
+                    "<resultado>PLACEHOLDER</resultado>\n" +
+                    "\t<grupo nombre = \"PLACEHOLDER\">\n" +
+                    "\t{for $grupo in /Grupos/Grupo[@nombre=\"YYYYY\"]\n" +
+                    "let $personaje:= $grupo/Personajes/personaje\n" +
+                    "let $nombre:= $personaje/data(nombre)\n" +
+                    "let $clase:= $personaje/data(clase)\n" +
+                    "let $raza:= $personaje/data(raza)\n" +
+                    "let $nivel:= $personaje/data(nivel)\n" +
+                    "return <personaje>\n" +
+                    "\t\t<nombre>{$nombre}</nombre>\n" +
+                    "\t\t<clase>{$clase}</clase>\n" +
+                    "\t\t<raza>{$raza}</raza>\n" +
+                    "\t\t<nivel>{$nivel}</nivel>\n" +
+                    "\t</personaje>\n" +
+                    "}\n" +
+                    "\t</grupo>\n" +
+                    "\t<encuentro id=\"PLACEHOLDER\">\n" +
+                    "\t{\n" +
+                    "for $encuentro in /Encuentros/encuentros/encuentro[@id = 1]\n" +
+                    "return $encuentro}\n" +
+                    "\t</encuentro>\n" +
+                    "</combate>\n" +
+                    "into /Combates";
+
+
+        if(conectar() != null){
+            try{
+                XPathQueryService srv = (XPathQueryService) col.getService("XPathQueryService" , "1.0");
+                 ResourceSet result = srv.query(nuevoCombate);
+                 col.close();
+                System.out.println("Se ha introducido el nuevo combate");
+            } catch (XMLDBException e) {
+                System.out.println("Ha ocurrido un error al insertar el grupo");
+                throw new RuntimeException(e);
+            }
+        }else{
+            System.out.println("Se ha producido un error en la conexion.\n Comprueba las variables de conexion");
+        }
+    }
+
     public static void leerGrupos(){
         if(conectar() != null){
             try{
@@ -163,6 +207,38 @@ public class existOperaciones {
         }else{
             System.out.println("Se ha producido un error en la conexion.\n Comprueba las variables de conexion");
         }
+    }
+
+    public static int leerCombates(){
+        int numeroCombates = 0;
+        if(conectar() != null) {
+            try{
+                XPathQueryService srv;
+                srv = (XPathQueryService) col.getService("XPathQueryService", "1.0");
+
+                ResourceSet result = srv.query("for $combate in /Combates/combate return $combate");
+
+                ResourceIterator i;
+                i = result.getIterator();
+                if(!i.hasMoreResources()){
+                    System.out.println("No se encuentran datos. Si existen datos en la BBDD es que hay error");
+                }
+
+                while(i.hasMoreResources()){
+                    numeroCombates++;
+                    Resource r = i.nextResource();
+                    System.out.println("-----------------------------------------------------------");
+                    System.out.println((String) r.getContent());
+                }
+                col.close();
+            } catch (XMLDBException e) {
+                System.out.println("Ha ocurrido un error al intentar crear el servicio");
+                throw new RuntimeException(e);
+            }
+        }else{
+            System.out.println("Se ha producido un error en la conexion.\n Comprueba las variables de conexion");
+        }
+        return numeroCombates;
     }
 
     public static boolean grupoExiste(String nombre){
@@ -228,7 +304,7 @@ public class existOperaciones {
                 if(existe){
                     return true;
                 }else{
-                    return false; 
+                    return false;
                 }
 
             } catch (XMLDBException e) {
@@ -240,5 +316,7 @@ public class existOperaciones {
         }
         return false;
     }
+
+
 
 }
