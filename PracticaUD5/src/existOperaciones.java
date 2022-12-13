@@ -134,31 +134,20 @@ public class existOperaciones {
 
     }
 
-    public static void insertarCombate(int idCombate, String nombreGrupo){
+    public static void insertarCombate(int idEncuentro, String nombreGrupo, boolean victoria){
 
             String nuevoCombate = "update insert \n" +
-                    "<combate id=\"PLACEHOLDER\">\n" +
-                    "<resultado>PLACEHOLDER</resultado>\n" +
-                    "\t<grupo nombre = \"PLACEHOLDER\">\n" +
-                    "\t{for $grupo in /Grupos/Grupo[@nombre=\"YYYYY\"]\n" +
-                    "let $personaje:= $grupo/Personajes/personaje\n" +
-                    "let $nombre:= $personaje/data(nombre)\n" +
-                    "let $clase:= $personaje/data(clase)\n" +
-                    "let $raza:= $personaje/data(raza)\n" +
-                    "let $nivel:= $personaje/data(nivel)\n" +
-                    "return <personaje>\n" +
-                    "\t\t<nombre>{$nombre}</nombre>\n" +
-                    "\t\t<clase>{$clase}</clase>\n" +
-                    "\t\t<raza>{$raza}</raza>\n" +
-                    "\t\t<nivel>{$nivel}</nivel>\n" +
-                    "\t</personaje>\n" +
-                    "}\n" +
-                    "\t</grupo>\n" +
-                    "\t<encuentro id=\"PLACEHOLDER\">\n" +
-                    "\t{\n" +
-                    "for $encuentro in /Encuentros/encuentros/encuentro[@id = 1]\n" +
+                    "<combate id="+leerCombates(false)+">\n" +
+                    "<resultado>"+(victoria == true ? "victoria" : "derrota" )+"</resultado>\n" +
+                    "<grupo nombre = \""+nombreGrupo+"\">\n" +
+                    "{for $grupo in /Grupos/Grupo[@nombre=\""+nombreGrupo+"\"]\n" +
+                    "return $grupo" +
+                    "</grupo>\n" +
+                    "<encuentro id="+idEncuentro+">\n" +
+                    "{\n" +
+                    "for $encuentro in /Encuentros/encuentros/encuentro[@id = "+idEncuentro+"]\n" +
                     "return $encuentro}\n" +
-                    "\t</encuentro>\n" +
+                    "</encuentro>\n" +
                     "</combate>\n" +
                     "into /Combates";
 
@@ -176,6 +165,75 @@ public class existOperaciones {
         }else{
             System.out.println("Se ha producido un error en la conexion.\n Comprueba las variables de conexion");
         }
+    }
+
+    public static void deleteGrupo(String nombreGrupo){
+
+        if(conectar()!=null){
+            try{
+                XPathQueryService srv = (XPathQueryService)  col.getService("XPathQueryService" , "1.0");
+                ResourceSet result = srv.query("update delete /Grupos/Grupo[@nombre="+nombreGrupo+"]");
+                col.close();
+            } catch (XMLDBException e) {
+                System.out.println("Ha ocurrido un error al eliminar el grupo");
+                throw new RuntimeException(e);
+            }
+        }else{
+            System.out.println("Se ha producido un error en la conexion.\n Comprueba las variables de conexion");
+        }
+
+
+    }
+
+    public static void updateGrupo(String nombreViejo, String nombreNuevo){
+        if(conectar() != null){
+            try{
+
+                //Las comillas son un posible error
+                XPathQueryService srv = (XPathQueryService)  col.getService("XPathQueryService" , "1.0");
+                ResourceSet result = srv.query("for $grupo in /Grupos/Grupo[@nombre = \""+nombreViejo+"\"]" +
+                        "return update value $grupo/@nombre with '"+nombreNuevo+"' ");
+                col.close();
+            } catch (XMLDBException e) {
+                System.out.println("Ha ocurrido un problema al actualizar el grupo");
+                throw new RuntimeException(e);
+            }
+        }else{
+            System.out.println("Se ha producido un error en la conexion.\n Comprueba las variables de conexion");
+        }
+    }
+
+    public static void updateCombate(int id,boolean victoria){
+        if(conectar() != null){
+            try{
+                XPathQueryService srv = (XPathQueryService)  col.getService("XPathQueryService" , "1.0");
+                ResourceSet result = srv.query("for $combate in /Combates/combate[@id="+id+"]" +
+                        "return update value $combate/victoria with '"+(victoria == true ? "victoria" : "derrota" )+"' ");
+                col.close();
+            } catch (XMLDBException e) {
+                System.out.println("Ha ocurrido un problema al actualizar el combate");
+                throw new RuntimeException(e);
+            }
+        }else{
+            System.out.println("Se ha producido un error en la conexion.\n Comprueba las variables de conexion");
+        }
+    }
+
+    public static void deleteCombate(int idCombate){
+
+        if(conectar() != null){
+            try{
+                XPathQueryService srv = (XPathQueryService)  col.getService("XPathQueryService" , "1.0");
+                ResourceSet result = srv.query("update delete /Combates/combate[@id="+idCombate+"]");
+                col.close();
+            } catch (XMLDBException e) {
+                System.out.println("Ha ocurrido un error al eliminar el combate");
+                throw new RuntimeException(e);
+            }
+        }else{
+            System.out.println("Se ha producido un error en la conexion.\n Comprueba las variables de conexion");
+        }
+
     }
 
     public static void leerGrupos(){
@@ -209,7 +267,35 @@ public class existOperaciones {
         }
     }
 
-    public static int leerCombates(){
+    public static void consultarGrupos(String consulta){
+        if(conectar() != null){
+            try{
+                XPathQueryService srv = (XPathQueryService)  col.getService("XPathQueryService" , "1.0");
+
+                ResourceSet result = srv.query(consulta);
+                ResourceIterator i;
+                i = result.getIterator();
+                if(!i.hasMoreResources()){
+                    System.out.println("No se encuentran datos. Si existen datos en la BBDD es que hay error");
+                }
+
+                while(i.hasMoreResources()){
+                    Resource r = i.nextResource();
+                    System.out.println("------------------------------------------------------------");
+                    System.out.println((String) r.getContent());
+                }
+                col.close();
+
+            } catch (XMLDBException e) {
+                System.out.println("Ha ocurrido un error al intentar crear el servicio");
+                throw new RuntimeException(e);
+            }
+        }else{
+            System.out.println("Se ha producido un error en la conexion.\n Comprueba las variables de conexion");
+        }
+    }
+
+    public static int leerCombates(boolean mostrar){
         int numeroCombates = 0;
         if(conectar() != null) {
             try{
@@ -223,12 +309,16 @@ public class existOperaciones {
                 if(!i.hasMoreResources()){
                     System.out.println("No se encuentran datos. Si existen datos en la BBDD es que hay error");
                 }
+                numeroCombates = (int)result.getSize();
+                if(mostrar) {
+                    while (i.hasMoreResources()) {
+                        //numeroCombates++;
 
-                while(i.hasMoreResources()){
-                    numeroCombates++;
-                    Resource r = i.nextResource();
-                    System.out.println("-----------------------------------------------------------");
-                    System.out.println((String) r.getContent());
+                        Resource r = i.nextResource();
+                        System.out.println("-----------------------------------------------------------");
+                        System.out.println((String) r.getContent());
+
+                    }
                 }
                 col.close();
             } catch (XMLDBException e) {
@@ -279,6 +369,37 @@ public class existOperaciones {
         return false;//Si se devuelve esto es por errores
     }
 
+    public static boolean combateExiste(int id){
+        if(conectar() != null){
+            try{
+                XPathQueryService srv = (XPathQueryService) col.getService("XPathQueryService", "1.0");
+                ResourceSet result = srv.query("for $combate in /Combates/combate/data(@id) return $combate");
+
+                ResourceIterator i;
+                i = result.getIterator();
+                if(!i.hasMoreResources()){
+                    System.out.println("No se encuentran datos. Si existen datos en la BBDD es que hay error");
+                }
+                boolean existe = false;
+                while(i.hasMoreResources()){
+                    Resource r = i.nextResource();
+                    if((int)r.getContent() == id){
+                        existe = true;
+                    }
+                }
+
+                boolean bool = existe == true ? true : false;
+                return bool;
+
+            } catch (XMLDBException e) {
+                System.out.println("Ha ocurrido un error al intentar crear el servicio");
+                throw new RuntimeException(e);
+            }
+        }else{
+            System.out.println("Se ha producido un error en la conexion.\n Comprueba las variables de conexion");
+        }
+        return false;
+    }
     public static boolean encuentroExiste(int id){
         if(conectar() != null){
             try{

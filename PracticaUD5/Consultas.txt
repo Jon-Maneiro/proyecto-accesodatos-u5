@@ -24,17 +24,7 @@ update insert
 <resultado>PLACEHOLDER</resultado>
 	<grupo nombre = "PLACEHOLDER">
 	{for $grupo in /Grupos/Grupo[@nombre="YYYYY"]
-let $personaje:= $grupo/Personajes/personaje
-let $nombre:= $personaje/data(nombre)
-let $clase:= $personaje/data(clase)
-let $raza:= $personaje/data(raza)
-let $nivel:= $personaje/data(nivel)
-return <personaje>
-		<nombre>{$nombre}</nombre>
-		<clase>{$clase}</clase>
-		<raza>{$raza}</raza>
-		<nivel>{$nivel}</nivel>
-	</personaje>
+	return $grupo
 }
 	</grupo>
 	<encuentro id="PLACEHOLDER">

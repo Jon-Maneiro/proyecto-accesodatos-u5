@@ -131,9 +131,13 @@ public class Main {
                             crearGrupo();
                             break;
                         case 2://Borrar
+                            borrarGrupo();
                             break;
                         case 3://Listado
                             existOperaciones.leerGrupos();
+                            break;
+                        case 4://Alteraciones//Cambiar nombre a party
+                            updateGrupo();
                             break;
                         case 0:
                             break;
@@ -145,9 +149,14 @@ public class Main {
                         case 1://Crear
                             crearCombate();
                             break;
-                        case 2:
+                        case 2://Borrar
+                            borrarCombate();
                             break;
-                        case 3:
+                        case 3://Listado
+                            existOperaciones.leerCombates(true);
+                            break;
+                        case 4://Alteraciones - Cambiar Victoria Derrota
+                            updateCombate();
                             break;
                         case 0:
                             break;
@@ -177,6 +186,7 @@ public class Main {
         System.out.println("https://5e.tools");
         System.out.println("..Cerrando programa..");
     }
+
 
     /**
      * Menu principal donde se escoje que se desea hacer; Encuentros , Personajes , Grupos, Combates o Consultas
@@ -282,14 +292,15 @@ public class Main {
             System.out.println("1 - Crear Grupo");
             System.out.println("2 - Borrar Grupo");
             System.out.println("3 - Listado Grupos");
+            System.out.println("4 - Modificar Nombre Grupo");
             Scanner sc = new Scanner(System.in);
             String respuesta = sc.nextLine();
             if(isInt(respuesta)) {
                 selec = Integer.parseInt(respuesta);
-                if (selec >= 0 && selec <= 3) {
+                if (selec >= 0 && selec <= 4) {
                     correcto = true;
                 } else {
-                    System.out.println("Numeros del 1 al 3(Con el 0 para salir) porfa");
+                    System.out.println("Numeros del 1 al 4(Con el 0 para salir) porfa");
                 }
             }else{
                 System.out.println("Parece que el dato introducido es incorrecto, vuelve a probar");
@@ -307,15 +318,16 @@ public class Main {
                     "\n mediante el metodo del menu Exist");
             System.out.println("1 - Crear Combate");
             System.out.println("2 - Borrar Combate");
-            System.out.println("3 - Modificar Combate?¿?¿");
+            System.out.println("3 - Listado Combates");
+            System.out.println("4 - Modificar Victoria/Derrota");
             Scanner sc = new Scanner(System.in);
             String respuesta = sc.nextLine();
             if(isInt(respuesta)) {
                 selec = Integer.parseInt(respuesta);
-                if (selec >= 0 && selec <= 3) {
+                if (selec >= 0 && selec <= 4) {
                     correcto = true;
                 } else {
-                    System.out.println("Numeros del 1 al 3(Con el 0 para salir) porfa");
+                    System.out.println("Numeros del 1 al 4(Con el 0 para salir) porfa");
                 }
             }else{
                 System.out.println("Parece que el dato introducido es incorrecto, vuelve a probar");
@@ -333,7 +345,7 @@ public class Main {
                     "\n cada vez que se cambie uno de los siguientes objetos:" +
                     "\n Encuentros");
             System.out.println("1 - Subir archivos a Exist");
-            System.out.println("2 - Borrar Grupo");
+            System.out.println("2 - Consultar Grupos");
             System.out.println("3 - Modificar Grupo?¿?¿");
             Scanner sc = new Scanner(System.in);
             String respuesta = sc.nextLine();
@@ -429,6 +441,220 @@ public class Main {
     }
 
     //_------------------------------------------------------------------------------------------------------------_
+    private static void borrarGrupo() {
+        Scanner sc = new Scanner(System.in);
+
+        //Primero se listan los grupos
+        existOperaciones.leerGrupos();
+
+        String check = "";
+        boolean correcto = false;
+
+        String nombreGrupo = "";
+
+        while(!correcto){
+            System.out.println("Introduce el nombre del grupo a borrar");
+            check = sc.nextLine();
+            if(existOperaciones.grupoExiste(check)){
+                nombreGrupo = check;
+                correcto = true;
+            }
+        }
+        existOperaciones.deleteGrupo(nombreGrupo);
+    }
+
+    private static void consultarGrupos(){
+        Scanner sc = new Scanner(System.in);
+        //Consultas posibles
+        /*
+        * Nombre
+        * Numero Personajes
+        * Media Estadisticas*/
+
+        boolean correcto = false;
+        int selec = -1;
+
+        while(!correcto){
+            System.out.println("Introduce el parametro sobre el que deseas basar la consulta:" +
+                    "\n 1 - Nombre de Grupo" +
+                    "\n 2 - Numero de Personajes" +
+                    "\n 3 - Media de Estadisticas");
+            String temp = sc.nextLine();
+            if(isInt(temp)){
+                selec = Integer.parseInt(temp);
+                if(selec >= 1 && selec <= 3){
+                    correcto = true;
+                }else{
+                    System.out.println("Lo que has introducido no es un valor valido");
+                }
+            }else{
+                System.out.println("Lo que has introducido no es un numero");
+            }
+
+        }
+
+        String consulta = "";
+
+        switch (selec){
+            case 1://Nombre de Grupo
+                String nombre = "";
+                System.out.println("Por favor introduce el nombre del grupo que deseas filtrar(Si introduces solo parte " +
+                        "de una palabra, se buscará a los grupos que contengan ese texto)");
+                nombre = sc.nextLine();
+                consulta = "for $grupo in /Grupos/Grupo[contains(@nombre,"+nombre+")]" +
+                        "return <Grupo>{$grupo}</Grupo>";
+
+                break;
+            case 2://Numero de personajes
+                int numPJ = 0;
+                System.out.println("Por favor introduce el numero de personajes que deseas que tengan los grupos mostrados");
+
+                correcto = false;
+                while(!correcto){
+                    String check = sc.nextLine();
+                    if(isInt(check)){
+                        numPJ = Integer.parseInt(check);
+                    }else{
+                        System.out.println("Lo que has introducido no es un numero, intentalo otra vez");
+                    }
+                }
+
+                consulta = "for $grupo in /Grupos/Grupo[count(/Personajes/personaje) = "+numPJ+"]\n" +
+                        "return $grupo\n";
+
+                break;
+            case 3://Media de estadisticas(Elegir estadistica)
+                String stat = null;
+                int rstat = 0;
+                int numStat = 0;
+
+                String[] lista = {"STR","DEX","CON","INT","WIS","CHA"};
+
+                correcto = false;
+
+                System.out.println("Introduce el numero correspondiente a la estadistica que quieres filtar:" +
+                        "\n1 - FUERZA"+
+                        "\n2 - DESTREZA"+
+                        "\n3 - CONSTITUCION"+
+                        "\n4 - INTELIGENCIA"+
+                        "\n5 - SABIDURIA"+
+                        "\n6 - CARISMA");
+
+
+                while(!correcto){
+                    String check = sc.nextLine();
+                    if(isInt(check)){
+                        rstat = Integer.parseInt(check);
+                        if(rstat >= 1 && rstat <= 6){
+                            stat = lista[rstat];
+                            correcto = true;
+                        }else{
+                            System.out.println("El dato introducido es incorrecto");
+                        }
+                    }else{
+                        System.out.println("Lo que has introducido no es un numero, intentalo otra vez");
+                    }
+                }
+
+                System.out.println("Por favor introduce que valor deseas que tenga la media");
+                correcto = false;
+                while(!correcto){
+                    String check = sc.nextLine();
+                    if(isInt(check)){
+                         numStat = Integer.parseInt(check);
+                    }else{
+                        System.out.println("Lo que has introducido no es un numero, intentalo otra vez");
+                    }
+                }
+
+
+                consulta = "for $grupo in /Grupos/Grupo[/MediaEstadisticas/Med"+stat+" = "+numStat+"]" +
+                        " return $grupo";
+                break;
+        }
+
+        existOperaciones.consultarGrupos(consulta);
+
+    }
+
+    private static void borrarCombate(){
+        Scanner sc = new Scanner(System.in);
+
+        //Primero se listan los combates
+        existOperaciones.leerCombates(true);
+
+        String check = "";
+        boolean correcto = false;
+
+        int idCombate = 0;
+
+        while(!correcto){
+            System.out.println("Introduce el id del combate a borrar");
+            check = sc.nextLine();
+            if(existOperaciones.combateExiste(Integer.parseInt(check))){
+                idCombate = Integer.parseInt(check);
+                correcto = true;
+            }
+        }
+
+        existOperaciones.deleteCombate(idCombate);
+    }
+
+    public static void updateGrupo(){
+        Scanner sc = new Scanner(System.in);
+
+        //Primero se listan los grupos
+        existOperaciones.leerGrupos();
+
+        String check = "";
+        boolean correcto = false;
+
+        String nombreGrupo = "";
+
+        while(!correcto){
+            System.out.println("Introduce el nombre del grupo al que le quieres cambiar el nombre");
+            check = sc.nextLine();
+            if(existOperaciones.grupoExiste(check)){
+                nombreGrupo = check;
+                correcto = true;
+            }
+        }
+
+        String nuevoNombre = "";
+
+        System.out.println("Introduce el nuevo nombre que quieres para ese grupo");
+
+        nuevoNombre = sc.nextLine();
+
+        existOperaciones.updateGrupo(nombreGrupo,nuevoNombre);
+
+    }
+
+    public static void updateCombate(){
+        Scanner sc = new Scanner(System.in);
+
+        //Primero mostramos los combates
+        existOperaciones.leerCombates(false);
+
+        String check = "";
+        boolean correcto = false;
+
+        int idCombate = 0;
+
+        while(!correcto){
+            System.out.println("Introduce el id del combate que quieres modificar");
+            check = sc.nextLine();
+            if(existOperaciones.combateExiste(Integer.parseInt(check))){
+                idCombate = Integer.parseInt(check);
+                correcto = true;
+            }
+        }
+
+        System.out.println("Han ganado los aventureros?Y/N");
+        boolean victoria = yesNo();
+
+        existOperaciones.updateCombate(idCombate,victoria);
+    }
 
     public static void crearGrupo(){
         Scanner sc = new Scanner(System.in);
@@ -534,6 +760,10 @@ public class Main {
         }
 
 
+        System.out.println("Los aventureros han ganado el combate?");
+        boolean victoria = yesNo();
+
+        existOperaciones.insertarCombate(idEncuentro, nomGrupo, victoria);
 
 
 
