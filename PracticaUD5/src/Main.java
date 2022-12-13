@@ -475,7 +475,7 @@ public class Main {
         int selec = -1;
 
         while(!correcto){
-            System.out.println("Introduce el parametro sobre el que deseas basar la consulta:" +
+            System.out.println("¿Que busqueda deseas hacer?" +
                     "\n 1 - Nombre de Grupo" +
                     "\n 2 - Numero de Personajes" +
                     "\n 3 - Media de Estadisticas");
@@ -574,6 +574,57 @@ public class Main {
         }
 
         existOperaciones.consultarGrupos(consulta);
+
+    }
+
+    private static void consultarCombate(){
+        Scanner sc = new Scanner(System.in);
+        //Opciones posibles
+        /*
+        * ID de combate
+        * Victoria/Derrota
+        * Nombre de Grupo
+        * */
+        boolean correcto = false;
+        int selec = -1;
+        String consulta = "";
+
+        while(!correcto){
+            System.out.println("¿Que busqueda deseas hacer?" +
+                    "\n 1 - Id Combate"+
+                    "\n 2 - Victoria/Derrota"+
+                    "\n 3 - Nombre de Grupo");
+            String temp = sc.nextLine();
+            if(isInt(temp)){
+                selec = Integer.parseInt(temp);
+                if(selec >= 1 && selec <= 3){
+                    correcto = true;
+                }else{
+                    System.out.println("El numero introducido no esta entre los valores permitidos");
+                }
+            }else{
+                System.out.println("Lo que has introducido no es un numero, intentalo otra vez");
+            }
+        }
+
+        switch (selec){
+            case 1:// id combate
+                int idCombate = 0;
+                System.out.println("Introduce el id del combate que deseas visualizar");
+                correcto = false;
+                
+                break;
+            case 2://Victoria/Derrota
+                break;
+            case 3://Nombre de Grupo
+                String nombre = "";
+                System.out.println("Por favor introduce el nombre del grupo que deseas filtrar(Si introduces solo parte " +
+                        "de una palabra, se buscará a los grupos que contengan ese texto)");
+                nombre = sc.nextLine();
+                consulta = "for $combate in /Combates/combate[contains(/grupo/@nombre,"+nombre+")]" +
+                        "return <combate>{$combate}</combate>";
+                break;
+        }
 
     }
 
