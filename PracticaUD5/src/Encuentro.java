@@ -137,4 +137,12 @@ public class Encuentro implements Serializable {
     public void setRecompensas(ListaRecompensas recompensas) {
         this.recompensas = recompensas;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }

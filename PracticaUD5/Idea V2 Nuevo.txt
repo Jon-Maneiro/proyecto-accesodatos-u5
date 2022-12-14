@@ -27,6 +27,6 @@ Se me ocurre poder hacer búsqueda por comentarios y/o etiquetas.
 TAMBIÉN se podrán hacer updates y deletes de los datos, pensar bien las updates porque son complejas. En Grupo, poder cambiar el nombre del grupo, algun dato de los personajes..
 Poder borrar el grupo completo, un personaje suelto, añadirle un personaje suelto.
 
-EN encuentros, poder quitar monstruos individuales, añadirlos, quitar personajes del grupo, añadirlos, y editar las recompensas. Parece mucho, espero que no lo sea.
+Consultar Grupos
 
 

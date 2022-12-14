@@ -168,9 +168,11 @@ public class Main {
                         case 1://Subir archivos a Exist !!IMPORTANTE!!
                             existOperaciones.subirArchivos();
                             break;
-                        case 2:
+                        case 2://Consultar Grupos
+                            consultarGrupos();
                             break;
-                        case 3:
+                        case 3://Consultar Combates
+                            consultarCombate();
                             break;
                         case 0:
                             break;
@@ -346,7 +348,7 @@ public class Main {
                     "\n Encuentros");
             System.out.println("1 - Subir archivos a Exist");
             System.out.println("2 - Consultar Grupos");
-            System.out.println("3 - Modificar Grupo?¿?¿");
+            System.out.println("3 - Consultar Combates");
             Scanner sc = new Scanner(System.in);
             String respuesta = sc.nextLine();
             if(isInt(respuesta)) {
@@ -501,7 +503,7 @@ public class Main {
                 System.out.println("Por favor introduce el nombre del grupo que deseas filtrar(Si introduces solo parte " +
                         "de una palabra, se buscará a los grupos que contengan ese texto)");
                 nombre = sc.nextLine();
-                consulta = "for $grupo in /Grupos/Grupo[contains(@nombre,"+nombre+")]" +
+                consulta = "for $grupo in /Grupos/Grupo[contains(@nombre,\""+nombre+"\")]" +
                         "return <Grupo>{$grupo}</Grupo>";
 
                 break;
@@ -514,13 +516,14 @@ public class Main {
                     String check = sc.nextLine();
                     if(isInt(check)){
                         numPJ = Integer.parseInt(check);
+                        correcto = true;
                     }else{
                         System.out.println("Lo que has introducido no es un numero, intentalo otra vez");
                     }
                 }
 
                 consulta = "for $grupo in /Grupos/Grupo[count(/Personajes/personaje) = "+numPJ+"]\n" +
-                        "return $grupo\n";
+                        "return $grupo";
 
                 break;
             case 3://Media de estadisticas(Elegir estadistica)
@@ -573,7 +576,7 @@ public class Main {
                 break;
         }
 
-        existOperaciones.consultarGrupos(consulta);
+        existOperaciones.consultar(consulta);
 
     }
 
@@ -612,19 +615,37 @@ public class Main {
                 int idCombate = 0;
                 System.out.println("Introduce el id del combate que deseas visualizar");
                 correcto = false;
-                
+                while(!correcto){
+                    String temp = sc.nextLine();
+                    if(isInt(temp)){
+                        idCombate = Integer.parseInt(temp);
+                        correcto = true;
+                    }else{
+                        System.out.println("Lo que has introducido no es un numero");
+                    }
+                }
+
+                consulta = "for $combate in /Combates/combate[@id = "+idCombate+"]" +
+                        "\n return <combate>{$combate}</combate>";
+
                 break;
             case 2://Victoria/Derrota
+                boolean victoria;
+                System.out.println("Introduce (Y) si quieres ver victorias o (N) si quieres ver derrotas");
+                victoria = yesNo();
+                consulta = "for $combate in /Combates/combate[data(/resultado) = "+(victoria == true ? "\"victoria\"" : "\"derrota\"")+"] return $combate";
                 break;
             case 3://Nombre de Grupo
                 String nombre = "";
                 System.out.println("Por favor introduce el nombre del grupo que deseas filtrar(Si introduces solo parte " +
                         "de una palabra, se buscará a los grupos que contengan ese texto)");
                 nombre = sc.nextLine();
-                consulta = "for $combate in /Combates/combate[contains(/grupo/@nombre,"+nombre+")]" +
+                consulta = "for $combate in /Combates/combate[contains(Grupo/@nombre,\""+nombre+"\")]" +
                         "return <combate>{$combate}</combate>";
                 break;
         }
+
+        existOperaciones.consultar(consulta);
 
     }
 
@@ -1099,6 +1120,8 @@ public class Main {
         File file = new File("Encuentros.xml");
         if (file.exists()) {
             ListaEncuentros temp = leerEncuentrosDeXML();
+
+            encuentros.getEncuentros().get(0).setId(temp.getEncuentros().size());
 
             for (Encuentro enc : temp.getEncuentros()) {
                 encuentros.add(enc);

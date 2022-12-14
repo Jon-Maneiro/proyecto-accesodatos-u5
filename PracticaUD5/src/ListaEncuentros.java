@@ -47,11 +47,12 @@ public class ListaEncuentros implements Serializable {
         FileInputStream fichero = null;
         try {
             fichero = new FileInputStream("Encuentros.xml");
+            this.encuentros = ((ListaEncuentros) xstream.fromXML(fichero)).getEncuentros();
         } catch (FileNotFoundException e) {
             System.out.println("Error al acceder al fichero de Encuentros");
-            throw new RuntimeException(e);
+            //throw new RuntimeException(e);
         }
-        this.encuentros = ((ListaEncuentros) xstream.fromXML(fichero)).getEncuentros();
+
 
 
         //Leer esto con un Iterator

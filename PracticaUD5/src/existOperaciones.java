@@ -137,17 +137,12 @@ public class existOperaciones {
     public static void insertarCombate(int idEncuentro, String nombreGrupo, boolean victoria){
 
             String nuevoCombate = "update insert \n" +
-                    "<combate id="+leerCombates(false)+">\n" +
+                    "<combate id=\""+leerCombates(false)+"\">\n" +
                     "<resultado>"+(victoria == true ? "victoria" : "derrota" )+"</resultado>\n" +
-                    "<grupo nombre = \""+nombreGrupo+"\">\n" +
                     "{for $grupo in /Grupos/Grupo[@nombre=\""+nombreGrupo+"\"]\n" +
-                    "return $grupo" +
-                    "</grupo>\n" +
-                    "<encuentro id="+idEncuentro+">\n" +
-                    "{\n" +
-                    "for $encuentro in /Encuentros/encuentros/encuentro[@id = "+idEncuentro+"]\n" +
+                    "return $grupo}"+
+                    "{for $encuentro in /Encuentros/encuentros/encuentro[@id = \""+idEncuentro+"\"]\n" +
                     "return $encuentro}\n" +
-                    "</encuentro>\n" +
                     "</combate>\n" +
                     "into /Combates";
 
@@ -172,7 +167,7 @@ public class existOperaciones {
         if(conectar()!=null){
             try{
                 XPathQueryService srv = (XPathQueryService)  col.getService("XPathQueryService" , "1.0");
-                ResourceSet result = srv.query("update delete /Grupos/Grupo[@nombre="+nombreGrupo+"]");
+                ResourceSet result = srv.query("update delete /Grupos/Grupo[@nombre=\""+nombreGrupo+"\"]");
                 col.close();
             } catch (XMLDBException e) {
                 System.out.println("Ha ocurrido un error al eliminar el grupo");
@@ -207,8 +202,8 @@ public class existOperaciones {
         if(conectar() != null){
             try{
                 XPathQueryService srv = (XPathQueryService)  col.getService("XPathQueryService" , "1.0");
-                ResourceSet result = srv.query("for $combate in /Combates/combate[@id="+id+"]" +
-                        "return update value $combate/victoria with '"+(victoria == true ? "victoria" : "derrota" )+"' ");
+                ResourceSet result = srv.query("for $combate in /Combates/combate[@id=\""+id+"\"]" +
+                        "return update value $combate/resultado with '"+(victoria == true ? "victoria" : "derrota" )+"' ");
                 col.close();
             } catch (XMLDBException e) {
                 System.out.println("Ha ocurrido un problema al actualizar el combate");
@@ -242,7 +237,7 @@ public class existOperaciones {
                 XPathQueryService srv;
                 srv = (XPathQueryService) col.getService("XPathQueryService", "1.0");
 
-                ResourceSet result = srv.query("for $grupo in /Grupos/grupo return $grupo");
+                ResourceSet result = srv.query("for $grupo in /Grupos/Grupo return $grupo");
 
                 ResourceIterator i;
                 i = result.getIterator();
@@ -267,7 +262,7 @@ public class existOperaciones {
         }
     }
 
-    public static void consultarGrupos(String consulta){
+    public static void consultar(String consulta){
         if(conectar() != null){
             try{
                 XPathQueryService srv = (XPathQueryService)  col.getService("XPathQueryService" , "1.0");
@@ -294,6 +289,7 @@ public class existOperaciones {
             System.out.println("Se ha producido un error en la conexion.\n Comprueba las variables de conexion");
         }
     }
+
 
     public static int leerCombates(boolean mostrar){
         int numeroCombates = 0;
@@ -348,7 +344,7 @@ public class existOperaciones {
                 boolean existe = false;
                 while(i.hasMoreResources()){
                     Resource r = i.nextResource();
-                    if((String)r.getContent() == nombre){
+                    if(((String)r.getContent()).equalsIgnoreCase(nombre)){
                         existe = true;
                     }
                 }
@@ -383,7 +379,7 @@ public class existOperaciones {
                 boolean existe = false;
                 while(i.hasMoreResources()){
                     Resource r = i.nextResource();
-                    if((int)r.getContent() == id){
+                    if(Integer.parseInt((String)r.getContent()) == id){
                         existe = true;
                     }
                 }
