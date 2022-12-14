@@ -286,6 +286,10 @@ public class Main {
         return selec;
     }
 
+    /**
+     * Menu para escoger como interactuar con los Grupos
+     * @return indicador
+     */
     public static int menuParty() {
         boolean correcto = false;
         int selec = -1;
@@ -311,6 +315,11 @@ public class Main {
         }
         return selec;
     }
+
+    /**
+     * Menu para elegir como interactuar con los combates
+     * @return indicador
+     */
     public static int menuCombate() {
         boolean correcto = false;
         int selec = -1;
@@ -338,6 +347,11 @@ public class Main {
         }
         return selec;
     }
+
+    /**
+     * Menu para elegir que consulta exist se desea efectuar
+     * @return indicador
+     */
     public static int menuConsultas() {
         boolean correcto = false;
         int selec = -1;
@@ -443,6 +457,10 @@ public class Main {
     }
 
     //_------------------------------------------------------------------------------------------------------------_
+
+    /**
+     * Recoge y comprueba los datos necesarios para borrar un Grupo de la BBDD
+     */
     private static void borrarGrupo() {
         Scanner sc = new Scanner(System.in);
 
@@ -465,6 +483,9 @@ public class Main {
         existOperaciones.deleteGrupo(nombreGrupo);
     }
 
+    /**
+     * Submenu para elegir como se quieren consultar los grupos
+     */
     private static void consultarGrupos(){
         Scanner sc = new Scanner(System.in);
         //Consultas posibles
@@ -580,6 +601,9 @@ public class Main {
 
     }
 
+    /**
+     * Submenu para elegir como consultar combates
+     */
     private static void consultarCombate(){
         Scanner sc = new Scanner(System.in);
         //Opciones posibles
@@ -649,6 +673,9 @@ public class Main {
 
     }
 
+    /**
+     * Recoge y comprueba los datos necesarios para borrar un Combate de la BBDD
+     */
     private static void borrarCombate(){
         Scanner sc = new Scanner(System.in);
 
@@ -672,6 +699,9 @@ public class Main {
         existOperaciones.deleteCombate(idCombate);
     }
 
+    /**
+     * Recoge y comprueba los datos necesarios para actualizar el nombre a un Grupo de la BBDD
+     */
     public static void updateGrupo(){
         Scanner sc = new Scanner(System.in);
 
@@ -702,6 +732,9 @@ public class Main {
 
     }
 
+    /**
+     * Recoge y comprueba los datos necesarios para actualizar un Combate de la BBDD
+     */
     public static void updateCombate(){
         Scanner sc = new Scanner(System.in);
 
@@ -728,6 +761,9 @@ public class Main {
         existOperaciones.updateCombate(idCombate,victoria);
     }
 
+    /**
+     * Recoge y comprueba los datos necesarios para crear un Grupo
+     */
     public static void crearGrupo(){
         Scanner sc = new Scanner(System.in);
         //Listamos los personajes primero
@@ -781,6 +817,9 @@ public class Main {
 
     }
 
+    /**
+     * Recoge y comprueba los datos necesarios para crear un combate
+     */
     public static void crearCombate() {
         Scanner sc = new Scanner(System.in);
 
@@ -811,6 +850,7 @@ public class Main {
         System.out.println("---------------------------------------------------");
         try {
             presentarEncuentros(leerEncuentrosDeXML());
+            System.out.println("Por favor, introduce el id del encuentro que quieres utilizar");
         } catch (FileNotFoundException e) {
             System.out.println("Fallo al encontrar el archivo Encuentros.xml");
             throw new RuntimeException(e);
@@ -1150,9 +1190,12 @@ public class Main {
         }
 
     }
-
+    @Deprecated
+    /**
+     * Escribe un Grupo a XML utilizando XSTREAM
+     */
     public static void escribirGrupoAXML(Grupo grupo) throws FileNotFoundException {
-        ListadoGrupos grupos = new ListadoGrupos(false);
+        ListadoGrupos grupos = new ListadoGrupos();
         grupos.add(grupo);
 
         File file = new File("Grupos.xml");

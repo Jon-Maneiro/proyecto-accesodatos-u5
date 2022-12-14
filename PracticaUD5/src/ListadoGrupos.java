@@ -4,38 +4,32 @@ import java.util.ArrayList;
 public class ListadoGrupos implements Serializable {
 
     ArrayList<Grupo> grupos = new ArrayList<>();
-    boolean llenar;
 
-    public ListadoGrupos(boolean llenar) {
-        this.llenar = llenar;
-        if(this.llenar){
-            llenarGrupos();
-        }
+    public ListadoGrupos() {
     }
 
-    public void llenarGrupos(){
-        //grupos = existOperaciones.llenarGrupos();
-    }
-
+    /**
+     * Agrega un grupo a la lista
+     * @param g
+     */
     public void add(Grupo g){
         this.grupos.add(g);
     }
 
+    /**
+     * Obtiene los grupos de la lista
+     * @return
+     */
     public ArrayList<Grupo> getGrupos() {
         return grupos;
     }
 
+    /**
+     * Asigna grupos a la lista
+     * @param grupos
+     */
     public void setGrupos(ArrayList<Grupo> grupos) {
         this.grupos = grupos;
     }
-
-    public boolean isLlenar() {
-        return llenar;
-    }
-
-    public void setLlenar(boolean llenar) {
-        this.llenar = llenar;
-    }
-
 
 }

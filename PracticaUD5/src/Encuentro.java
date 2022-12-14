@@ -47,6 +47,7 @@ public class Encuentro implements Serializable {
         this.recompensas = recompensas;
     }
 
+    @Deprecated
     public void obtenerId(){
 
 
@@ -138,10 +139,18 @@ public class Encuentro implements Serializable {
         this.recompensas = recompensas;
     }
 
+    /**
+     * Devuelve el ID del Encuentro
+     * @return
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     * Asigna ID al encuentro
+     * @param id
+     */
     public void setId(int id) {
         this.id = id;
     }

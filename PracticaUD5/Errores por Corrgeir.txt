@@ -1,2 +1,4 @@
 ERRORES CORREGIR
 .dat de los personajes, error de tamaño de campos -> Se ha deprecado el metodo por falta de tiempo, , no usar esa parte(NO CORREGIDO/SIN AVANCES)
+
+Existe un error por el cual la Inteligencia de los personajes se asigna a 0(NO RESUELTO por falta de tiempo)

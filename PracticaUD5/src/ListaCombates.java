@@ -14,19 +14,26 @@ public class ListaCombates implements Serializable {
     public ListaCombates() {
     }
 
-
+    /**
+     * Añade un combate a la Lista de Combates
+     * @param com combate a insertar
+     */
     public void add(Combate com){
         combates.add(com);
     }
 
-    public void llenarListaCombates(){
-
-    }
-
+    /**
+     * Obtiene una lista de los combates de esta clase
+     * @return
+     */
     public ArrayList<Combate> getCombates() {
         return combates;
     }
 
+    /**
+     * Asigna combates a la lista de combates
+     * @param combates
+     */
     public void setCombates(ArrayList<Combate> combates) {
         this.combates = combates;
     }

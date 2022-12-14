@@ -31,6 +31,9 @@ public class ListaEncuentros implements Serializable {
     }
 
 
+    /**
+     * Se rellena el objeto de ListaEncuentros desde el que se lance, con los Encuentros del XML local
+     */
     public void llenarListaEncuentros(){
 
         XStream xstream = new XStream();

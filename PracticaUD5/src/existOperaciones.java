@@ -11,20 +11,35 @@ import org.xmldb.api.modules.XPathQueryService;
 public class existOperaciones {
 
     //public static final String nombreFichero = "";
-
+    /*
+     * INICIO DE VARIABLES A CAMBIAR
+     */
     static String driver = "org.exist.xmldb.DatabaseImpl";//Diver de exist
 
     static String URI = "xmldb:exist://localhost:8083/exist/xmlrpc/db/ProyectoUD5";//URI de la coleccion
 
-    static String usu = "admin";
+    static String usu = "admin";//Usuario
 
-    static String pass = "12345Abcde";
+    static String pass = "12345Abcde";//Contraseña
 
     static Collection col = null;
 
+    /*
+    *
+    * FIN DE VARIABLES A CAMBIAR
+    *
+    * */
+
+    /**
+     * Constructor de la clase existOperaciones - No se usa
+     */
     public existOperaciones() {
     }
 
+    /**
+     * Conecta con la base de datos exist utilizando las variables de la parte superior de la clase
+     * @return la coleccion a la que se ha conectado
+     */
     public static Collection conectar() {
 
         try {
@@ -89,6 +104,10 @@ public class existOperaciones {
         }
     }
 
+    /**
+     * Inserta un grupo en la BBDD exist en el archivo Grupos
+     * @param grupo el grupo que se quiere insertar
+     */
     public static void insertarGrupo(Grupo grupo){
         String nuevoGrupo = "<Grupo nombre=\""+grupo.nombre+"\"> <Personajes>";
 
@@ -134,6 +153,12 @@ public class existOperaciones {
 
     }
 
+    /**
+     * Inserta un combate en la BBDD exist, en el archivo de Combates
+     * @param idEncuentro el Id del encuentro que se quiere insertar
+     * @param nombreGrupo el nombre del grupo que se quiere insertar
+     * @param victoria booleano que indica si se ha ganado o no
+     */
     public static void insertarCombate(int idEncuentro, String nombreGrupo, boolean victoria){
 
             String nuevoCombate = "update insert \n" +
@@ -162,6 +187,10 @@ public class existOperaciones {
         }
     }
 
+    /**
+     * Elimina un Grupo de la BBDD
+     * @param nombreGrupo nombre del grupo que se desea eliminar
+     */
     public static void deleteGrupo(String nombreGrupo){
 
         if(conectar()!=null){
@@ -180,6 +209,11 @@ public class existOperaciones {
 
     }
 
+    /**
+     * Actualiza el nombre de un Grupo
+     * @param nombreViejo el nombre actual del grupo
+     * @param nombreNuevo el nombre por el que se quiere sustituir
+     */
     public static void updateGrupo(String nombreViejo, String nombreNuevo){
         if(conectar() != null){
             try{
@@ -198,6 +232,11 @@ public class existOperaciones {
         }
     }
 
+    /**
+     * Actualiza el estado de victoria/derrota de un combate
+     * @param id el id del combate que se quiere modificar
+     * @param victoria booleano indicando si se ha ganado o no
+     */
     public static void updateCombate(int id,boolean victoria){
         if(conectar() != null){
             try{
@@ -214,6 +253,10 @@ public class existOperaciones {
         }
     }
 
+    /**
+     * Elimina un combate de la BBDD exist
+     * @param idCombate el id del combate que se desea eliminar
+     */
     public static void deleteCombate(int idCombate){
 
         if(conectar() != null){
@@ -231,6 +274,9 @@ public class existOperaciones {
 
     }
 
+    /**
+     * Lee los grupos existentes en la BBDD exist y los muestra por pantalla
+     */
     public static void leerGrupos(){
         if(conectar() != null){
             try{
@@ -262,6 +308,10 @@ public class existOperaciones {
         }
     }
 
+    /**
+     * Ejecuta las consultas que se le suministren y saca los datos por pantalla
+     * @param consulta la consulta que se quiere ejecutar
+     */
     public static void consultar(String consulta){
         if(conectar() != null){
             try{
@@ -291,6 +341,11 @@ public class existOperaciones {
     }
 
 
+    /**
+     * Lee y muestra por pantalla los combates existentes en la BBDD
+     * @param mostrar true o false, si se quiere que saque datos por pantalla
+     * @return un int indicando el numero de combates existente
+     */
     public static int leerCombates(boolean mostrar){
         int numeroCombates = 0;
         if(conectar() != null) {
@@ -327,6 +382,11 @@ public class existOperaciones {
         return numeroCombates;
     }
 
+    /**
+     * Comprueba si un grupo existe o no en la base de datos
+     * @param nombre el nombre del grupo a comprobar
+     * @return true o false
+     */
     public static boolean grupoExiste(String nombre){
         if(conectar() != null){
             try{
@@ -365,6 +425,11 @@ public class existOperaciones {
         return false;//Si se devuelve esto es por errores
     }
 
+    /**
+     * Comprueba si un combate existe en la BBDD
+     * @param id el id del combate
+     * @return true/false
+     */
     public static boolean combateExiste(int id){
         if(conectar() != null){
             try{
@@ -396,6 +461,12 @@ public class existOperaciones {
         }
         return false;
     }
+
+    /**
+     * Comprueba que un encuentro exista en la BBDD
+     * @param id el id del encuentro
+     * @return true/false
+     */
     public static boolean encuentroExiste(int id){
         if(conectar() != null){
             try{
