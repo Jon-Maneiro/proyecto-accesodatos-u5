@@ -360,7 +360,7 @@ public class existOperaciones {
                 if(!i.hasMoreResources()){
                     System.out.println("No se encuentran datos. Si existen datos en la BBDD es que hay error");
                 }
-                numeroCombates = (int)result.getSize();
+
                 if(mostrar) {
                     while (i.hasMoreResources()) {
                         //numeroCombates++;
@@ -379,7 +379,39 @@ public class existOperaciones {
         }else{
             System.out.println("Se ha producido un error en la conexion.\n Comprueba las variables de conexion");
         }
+
+        numeroCombates = ultimoIdCombate();
         return numeroCombates;
+    }
+
+    public static int ultimoIdCombate(){
+        int idCombate = -1;
+        if(conectar() != null){
+            try{
+                XPathQueryService srv;
+                srv = (XPathQueryService) col.getService("XPathQueryService", "1.0");
+                ResourceSet result = srv.query("for $id in max(/Combates/combate/data(@id)) return $id");
+                ResourceIterator i;
+                i = result.getIterator();
+                if(!i.hasMoreResources()){
+                    System.out.println("No se encuentran datos. Si existen datos en la BBDD es que hay error");
+                }
+
+
+                    while (i.hasMoreResources()) {
+                        Resource r = i.nextResource();
+                        idCombate = Integer.parseInt((String)r.getContent());
+                    }
+
+                col.close();
+            } catch (XMLDBException e) {
+                System.out.println("Ha ocurrido un error al intentar crear el servicio");
+                throw new RuntimeException(e);
+            }
+        }else{
+            System.out.println("Se ha producido un error en la conexion.\n Comprueba las variables de conexion");
+        }
+        return idCombate;
     }
 
     /**

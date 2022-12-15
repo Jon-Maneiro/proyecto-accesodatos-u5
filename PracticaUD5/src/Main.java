@@ -1161,11 +1161,17 @@ public class Main {
         if (file.exists()) {
             ListaEncuentros temp = leerEncuentrosDeXML();
 
-            encuentros.getEncuentros().get(0).setId(temp.getEncuentros().size());
+            int idTmp = -1;
+
 
             for (Encuentro enc : temp.getEncuentros()) {
+                if(enc.getId() > idTmp){
+                    idTmp = enc.getId();
+                }
                 encuentros.add(enc);
             }
+
+            encuentros.getEncuentros().get(0).setId(idTmp);
         }
         try {
 
